@@ -1,16 +1,17 @@
 /**
- * Browser Color System v2.0
+ * Browser Color System v3.0
  * Source: Figma tJamKVuAm0fELLoddNqQ9A, node 106:3910
+ * Collection: 浏览器色彩 / Browser Color v3.0 (78 COLOR variables)
  *
  * Strategy: Alpha + Solid dual-track
  * Base for alpha tokens (light mode): #000000
  * Base for alpha tokens (dark mode):  #FFFFFF
  *
- * Light mode values are used here (RN web preview).
- * Dark mode values are written to Figma Variables collection
- * "Browser Color System v2.0" and verified against spec.
+ * Light mode values used by PhoneHomeScreen are mapped here.
+ * The Figma collection is canonical for the complete Light/Dark inventory;
+ * add further code mappings only when a surface consumes those tokens.
  *
- * Dark mode corrections applied 2026-05-25:
+ * Current dark-mode values confirmed in the v3.0 collection:
  *   fill/quinary 6%→4%, fill/quaternary 10%→8%, fill/tertiary 16%→14%
  *   text/tertiary 30%→45%
  *   border/subtle 8%→6%, border/regular 14%→12%, border/strong 22%→20%

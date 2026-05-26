@@ -294,6 +294,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: 28,
+    backgroundColor: Colors.bgElevated,
     borderWidth: 0.5,
     borderColor: Colors.engineBorder,
     borderRadius: Radius.engine,
@@ -334,7 +335,7 @@ const styles = StyleSheet.create({
   shortcutLabel: {
     fontSize: 12,
     lineHeight: 14,
-    color: '#333333',
+    color: Colors.textPrimary,
     textAlign: 'center',
   },
 
@@ -344,7 +345,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 60,
-    backgroundColor: Colors.bgCard,
+    backgroundColor: Colors.bgPage,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
