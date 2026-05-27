@@ -15,7 +15,9 @@ Source node: `85:3451`, `412 x 914`.
 
 ## Responsive Rule
 
-- Phone uses the compact `PhoneHomeScreen` composition.
+- Phone uses the compact composition represented by the existing Expo
+  `PhoneHomeScreen` preview; the formal deliverable must reproduce it in an
+  Android XML layout.
 - Pad must be built separately from `91:5128`; no stretched or scaled Phone
   fallback is an accepted implementation.
 - Both compositions use the shared `Browser Color System v3.0` tokens.
@@ -23,5 +25,7 @@ Source node: `85:3451`, `412 x 914`.
 ## Verification Notes
 
 - Figma includes status and system navigation references.
-- Android rendered evidence must state whether system insets are OS-owned or
-  drawn by the app before geometry is declared verified.
+- Formal Android XML rendered evidence must state whether system insets are
+  OS-owned or drawn by the app before geometry is declared verified.
+- Expo preview geometry is reference evidence only and cannot close the XML
+  verification gate.

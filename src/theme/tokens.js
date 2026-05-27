@@ -1,135 +1,126 @@
 /**
  * Browser Color System v3.0
- * Source: Figma tJamKVuAm0fELLoddNqQ9A, node 106:3910
- * Collection: 浏览器色彩 / Browser Color v3.0 (78 COLOR variables)
+ * Source: Figma tJamKVuAm0fELLoddNqQ9A
+ * Collection: 浏览器色彩 / Browser Color v3.0 (87 vars, Light/Dark)
+ * Last synced: 2026-05-27
  *
- * Strategy: Alpha + Solid dual-track
- * Base for alpha tokens (light mode): #000000
- * Base for alpha tokens (dark mode):  #FFFFFF
+ * Light mode values used here (Expo preview).
+ * Dark mode values are in the Figma Variables collection.
  *
- * Light mode values used by PhoneHomeScreen are mapped here.
- * The Figma collection is canonical for the complete Light/Dark inventory;
- * add further code mappings only when a surface consumes those tokens.
- *
- * Current dark-mode values confirmed in the v3.0 collection:
- *   fill/quinary 6%→4%, fill/quaternary 10%→8%, fill/tertiary 16%→14%
- *   text/tertiary 30%→45%
- *   border/subtle 8%→6%, border/regular 14%→12%, border/strong 22%→20%
+ * v3.0 changes from v2.0:
+ *   - warning: #EA580C → #F59E0B (amber)
+ *   - semantic bg: 3-tier (default/hover/pressed) at 12%/18%/24%
+ *   - new: white-alpha / black-alpha invariant groups
+ *   - new: surface/transparent, semantic text/dark, semantic border
  */
 
-// ─── Brand ────────────────────────────────────────────────────────────────────
 export const Brand = {
-  light:    '#5C82F1', // deep-bg text / link / dark-mode icon
-  base:     '#2563EB', // primary · main button · link
-  strong:   '#1D4ED8', // hover
-  stronger: '#1E40AF', // pressed
-  focus:    'rgba(37,99,235,0.30)', // focus ring only
+  light:    '#5C82F1',
+  base:     '#2563EB',
+  strong:   '#1D4ED8',
+  stronger: '#1E40AF',
+  focus:    'rgba(37,99,235,0.30)',
 };
 
-// ─── Fill (alpha, light mode, base #000000) ───────────────────────────────────
-export const Fill = {
-  quinary:   'rgba(0,0,0,0.03)',  // ghost hover
-  quaternary:'rgba(0,0,0,0.06)',  // secondary default
-  tertiary:  'rgba(0,0,0,0.10)',  // hover state
-  secondary: 'rgba(0,0,0,0.16)',  // pressed / selected
-  primary:   'rgba(0,0,0,0.26)',  // tag / chip
-};
-
-// ─── Text (alpha, light mode, base #000000) ───────────────────────────────────
 export const Text = {
-  primary:     'rgba(0,0,0,0.88)', // heading / body
-  secondary:   'rgba(0,0,0,0.60)', // secondary description
-  tertiary:    'rgba(0,0,0,0.45)', // auxiliary info
-  placeholder: 'rgba(0,0,0,0.28)', // input hint
-  disabled:    'rgba(0,0,0,0.24)', // disabled text
+  primary:     'rgba(0,0,0,0.88)',
+  secondary:   'rgba(0,0,0,0.60)',
+  tertiary:    'rgba(0,0,0,0.45)',
+  placeholder: 'rgba(0,0,0,0.28)',
+  disabled:    'rgba(0,0,0,0.24)',
 };
 
-// ─── Border (alpha, light mode, base #000000) ─────────────────────────────────
+export const Fill = {
+  primary:    'rgba(0,0,0,0.26)',
+  secondary:  'rgba(0,0,0,0.16)',
+  tertiary:   'rgba(0,0,0,0.10)',
+  quaternary: 'rgba(0,0,0,0.06)',
+  quinary:    'rgba(0,0,0,0.03)',
+};
+
 export const Border = {
-  subtle:  'rgba(0,0,0,0.04)',  // weak
-  regular: 'rgba(0,0,0,0.08)',  // normal
-  strong:  'rgba(0,0,0,0.18)',  // strong
-  inverse: 'rgba(0,0,0,0.85)',  // inverse
+  inverse: 'rgba(0,0,0,0.85)',
+  strong:  'rgba(0,0,0,0.18)',
+  regular: 'rgba(0,0,0,0.08)',
+  subtle:  'rgba(0,0,0,0.04)',
 };
 
-// ─── Surface (opaque, light mode) ─────────────────────────────────────────────
 export const Surface = {
-  sunken:   '#F0F1F4', // deepest / editor blank
-  canvas:   '#FFFFFF', // page main bg
-  elevated: '#FAFAFB', // card / toolbar
-  raised:   '#FFFFFF', // modal / high float (+ shadow)
-  inverse:  '#1C1C1E', // inverse container / toast
+  canvas:      '#FFFFFF',
+  raised:      '#FFFFFF',
+  elevated:    '#FAFAFB',
+  sunken:      '#F0F1F4',
+  inverse:     '#1C1C1E',
+  transparent: 'rgba(255,255,255,0)',
 };
 
-// ─── Semantic ─────────────────────────────────────────────────────────────────
 export const Semantic = {
   success: {
-    base:    '#16A34A',
-    strong:  '#15803D',
-    stronger:'#166534',
-    bgDefault: 'rgba(22,163,74,0.10)',
+    base:      '#16A34A',
+    strong:    '#15803D',
+    stronger:  '#166534',
+    bgDefault: 'rgba(22,163,74,0.12)',
+    bgHover:   'rgba(22,163,74,0.18)',
+    bgPressed: 'rgba(22,163,74,0.24)',
+    border:    'rgba(22,163,74,0.36)',
+    textDark:  '#4ADE80',
   },
   warning: {
-    base:    '#EA580C',
-    strong:  '#C2410C',
-    stronger:'#9A3412',
-    bgDefault: 'rgba(234,88,12,0.10)',
+    base:      '#F59E0B',
+    strong:    '#D97706',
+    stronger:  '#B45309',
+    bgDefault: 'rgba(245,158,11,0.12)',
+    bgHover:   'rgba(245,158,11,0.18)',
+    bgPressed: 'rgba(245,158,11,0.24)',
+    border:    'rgba(245,158,11,0.36)',
+    textDark:  '#FDE68A',
   },
   danger: {
-    base:    '#DC2626',
-    strong:  '#B91C1C',
-    stronger:'#991B1B',
-    bgDefault: 'rgba(220,38,38,0.10)',
+    base:      '#DC2626',
+    strong:    '#B91C1C',
+    stronger:  '#991B1B',
+    bgDefault: 'rgba(220,38,38,0.12)',
+    bgHover:   'rgba(220,38,38,0.18)',
+    bgPressed: 'rgba(220,38,38,0.24)',
+    border:    'rgba(220,38,38,0.36)',
+    textDark:  '#F87171',
   },
   info: {
-    base:    '#2563EB', // same as brand/base
-    strong:  '#1D4ED8',
-    stronger:'#1E40AF',
-    bgDefault: 'rgba(37,99,235,0.10)',
+    base:      '#2563EB',
+    strong:    '#1D4ED8',
+    stronger:  '#1E40AF',
+    bgDefault: 'rgba(37,99,235,0.12)',
+    bgHover:   'rgba(37,99,235,0.18)',
+    bgPressed: 'rgba(37,99,235,0.24)',
+    border:    'rgba(37,99,235,0.36)',
+    textDark:  '#60A5FA',
   },
 };
 
-// ─── Convenience aliases (used in components) ─────────────────────────────────
 export const Colors = {
-  // backgrounds
-  white:          Surface.canvas,
-  bgPage:         Surface.canvas,
-  bgCard:         Surface.raised,
-  bgSunken:       Surface.sunken,
-  bgElevated:     Surface.elevated,
-
-  // text
-  textPrimary:    Text.primary,
-  textSecondary:  Text.secondary,
-  textTertiary:   Text.tertiary,
-  textPlaceholder:Text.placeholder,
-  textDisabled:   Text.disabled,
-
-  // border / outline
-  borderSubtle:   Border.subtle,
-  borderRegular:  Border.regular,
-  borderStrong:   Border.strong,
-
-  // fill states
-  fillHover:      Fill.tertiary,
-  fillPressed:    Fill.secondary,
-  fillSelected:   Fill.secondary,
-  fillGhost:      Fill.quinary,
-
-  // brand
-  brandBase:      Brand.base,
-  brandHover:     Brand.strong,
-  brandPressed:   Brand.stronger,
-
-  // search card specific
-  searchOutline:  Border.regular,   // rgba(0,0,0,0.08) — 0.5px border
-  searchShadow:   'rgba(0,0,0,0.04)',
-
-  // tab bg (search mode switch)
-  tabBg:          Fill.quinary,     // rgba(0,0,0,0.03) ≈ fill/quinary
-
-  // engine selector border
-  engineBorder:   Border.regular,   // rgba(0,0,0,0.08)
+  white:           Surface.canvas,
+  bgPage:          Surface.canvas,
+  bgCard:          Surface.raised,
+  bgSunken:        Surface.sunken,
+  bgElevated:      Surface.elevated,
+  textPrimary:     Text.primary,
+  textSecondary:   Text.secondary,
+  textTertiary:    Text.tertiary,
+  textPlaceholder: Text.placeholder,
+  textDisabled:    Text.disabled,
+  borderSubtle:    Border.subtle,
+  borderRegular:   Border.regular,
+  borderStrong:    Border.strong,
+  fillHover:       Fill.tertiary,
+  fillPressed:     Fill.secondary,
+  fillGhost:       Fill.quinary,
+  brandBase:       Brand.base,
+  brandHover:      Brand.strong,
+  brandPressed:    Brand.stronger,
+  searchOutline:   Border.regular,
+  searchShadow:    'rgba(0,0,0,0.04)',
+  tabBg:           Fill.quinary,
+  engineBorder:    Border.regular,
 };
 
 export const Spacing = {
@@ -139,9 +130,9 @@ export const Spacing = {
 };
 
 export const Radius = {
-  card:     16,
-  tab:       8,
-  tabItem:   6,
-  engine:    8,
-  shortcut:  8,
+  card:    16,
+  tab:      8,
+  tabItem:  6,
+  engine:   8,
+  shortcut: 8,
 };
