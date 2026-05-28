@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Browser Color System v3.0 — Light mode
+    Source: Figma tJamKVuAm0fELLoddNqQ9A
+    Specification: 🎨 Browser Color System v3.0 (106:3910)
+    Variable collection: 浏览器色彩 / Browser Color v3.0 (78 COLOR variables)
+    Modes: 浅色 Light / 深色 Dark
+    Synced: 2026-05-28
+
+    Each entry is annotated with its canonical Figma variable name.
+    The Figma collection is the single source of truth; do not edit values here
+    without updating the corresponding Figma variable first.
+-->
+
+<resources>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Brand — Figma: brand 品牌
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- brand 品牌/light · 浅色辅助   #5C82F1 -->
+    <color name="brand_light">#FF5C82F1</color>
+    <!-- brand 品牌/base · 主色       #2563EB -->
+    <color name="brand_base">#FF2563EB</color>
+    <!-- brand 品牌/strong · 悬浮态    #1D4ED8 -->
+    <color name="brand_strong">#FF1D4ED8</color>
+    <!-- brand 品牌/stronger · 按捺态  #1E40AF -->
+    <color name="brand_stronger">#FF1E40AF</color>
+    <!-- brand 品牌/focus · 聚焦光环   rgba(#2563EB, 0.30) -->
+    <color name="brand_focus">#4D2563EB</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Text — Figma: text 文字 (alpha, base #000000)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- text 文字/primary · 标题正文         rgba(0,0,0,0.88) → #000000e0 -->
+    <color name="text_primary">#E0000000</color>
+    <!-- text 文字/secondary · 次级说明       rgba(0,0,0,0.60) → #00000099 -->
+    <color name="text_secondary">#99000000</color>
+    <!-- text 文字/tertiary · 辅助信息        rgba(0,0,0,0.45) → #00000073 -->
+    <color name="text_tertiary">#73000000</color>
+    <!-- text 文字/placeholder · 输入提示      rgba(0,0,0,0.28) → #00000047 -->
+    <color name="text_placeholder">#47000000</color>
+    <!-- text 文字/disabled · 禁用文字        rgba(0,0,0,0.24) → #0000003d -->
+    <color name="text_disabled">#3D000000</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Fill — Figma: fill 填充 (alpha, base #000000)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- fill 填充/primary · 标签色标        rgba(0,0,0,0.26) → #00000042 -->
+    <color name="fill_primary">#42000000</color>
+    <!-- fill 填充/secondary · 按捺选中       rgba(0,0,0,0.16) → #00000029 -->
+    <color name="fill_secondary">#29000000</color>
+    <!-- fill 填充/tertiary · 悬浮态         rgba(0,0,0,0.10) → #0000001a -->
+    <color name="fill_tertiary">#1A000000</color>
+    <!-- fill 填充/quaternary · 弱次级默认    rgba(0,0,0,0.06) → #0000000f -->
+    <color name="fill_quaternary">#0F000000</color>
+    <!-- fill 填充/quinary · 极弱轻悬停       rgba(0,0,0,0.03) → #00000008 -->
+    <color name="fill_quinary">#08000000</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Border — Figma: border 边框 (alpha, base #000000)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- border 边框/inverse · 反色          rgba(0,0,0,0.85) → #000000d9 -->
+    <color name="border_inverse">#D9000000</color>
+    <!-- border 边框/strong · 强             rgba(0,0,0,0.18) → #0000002e -->
+    <color name="border_strong">#2E000000</color>
+    <!-- border 边框/regular · 常规          rgba(0,0,0,0.08) → #00000014 -->
+    <color name="border_regular">#14000000</color>
+    <!-- border 边框/subtle · 弱             rgba(0,0,0,0.04) → #0000000a -->
+    <color name="border_subtle">#0A000000</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Surface — Figma: surface 表面 (opaque, light mode)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- surface 表面/canvas · 页面主底色      #FFFFFF -->
+    <color name="surface_canvas">#FFFFFFFF</color>
+    <!-- surface 表面/raised · 弹窗高浮层       #FFFFFF -->
+    <color name="surface_raised">#FFFFFFFF</color>
+    <!-- surface 表面/elevated · 卡片工具栏     #FAFAFB -->
+    <color name="surface_elevated">#FFFAFAFB</color>
+    <!-- surface 表面/sunken · 最深 / 编辑器空白 #F0F1F4 -->
+    <color name="surface_sunken">#FFF0F1F4</color>
+    <!-- surface 表面/inverse · 反色容器 / 吐司 #1C1C1E -->
+    <color name="surface_inverse">#FF1C1C1E</color>
+    <color name="surface_transparent">#00FFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Semantic — Figma: semantic (success / warning / danger / info)
+         ═══════════════════════════════════════════════════════════════════ -->
+
+    <!-- ── Success 成功 ──────────────────────────────────────────────────── -->
+    <color name="success_base">#FF16A34A</color>
+    <color name="success_strong">#FF15803D</color>
+    <color name="success_stronger">#FF166534</color>
+    <color name="success_bg_default">#1F16A34A</color>
+    <color name="success_bg_hover">#2E16A34A</color>
+    <color name="success_bg_pressed">#3D16A34A</color>
+    <color name="success_border">#5C16A34A</color>
+    <color name="success_text_dark">#FF4ADE80</color>
+
+    <!-- ── Warning 警告 (v3.0: amber #F59E0B) ────────────────────────────── -->
+    <color name="warning_base">#FFF59E0B</color>
+    <color name="warning_strong">#FFD97706</color>
+    <color name="warning_stronger">#FFB45309</color>
+    <color name="warning_bg_default">#1FF59E0B</color>
+    <color name="warning_bg_hover">#2EF59E0B</color>
+    <color name="warning_bg_pressed">#3DF59E0B</color>
+    <color name="warning_border">#5CF59E0B</color>
+    <color name="warning_text_dark">#FFFDE68A</color>
+
+    <!-- ── Danger 危险 ───────────────────────────────────────────────────── -->
+    <color name="danger_base">#FFDC2626</color>
+    <color name="danger_strong">#FFB91C1C</color>
+    <color name="danger_stronger">#FF991B1B</color>
+    <color name="danger_bg_default">#1FDC2626</color>
+    <color name="danger_bg_hover">#2EDC2626</color>
+    <color name="danger_bg_pressed">#3DDC2626</color>
+    <color name="danger_border">#5CDC2626</color>
+    <color name="danger_text_dark">#FFF87171</color>
+
+    <!-- ── Info 信息 (= brand) ───────────────────────────────────────────── -->
+    <color name="info_base">#FF2563EB</color>
+    <color name="info_strong">#FF1D4ED8</color>
+    <color name="info_stronger">#FF1E40AF</color>
+    <color name="info_bg_default">#1F2563EB</color>
+    <color name="info_bg_hover">#2E2563EB</color>
+    <color name="info_bg_pressed">#3D2563EB</color>
+    <color name="info_border">#5C2563EB</color>
+    <color name="info_text_dark">#FF60A5FA</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Platform / System — non-variable values from spec board
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- M3/ref/neutral/neutral10: #1D1B20 — status bar clock text -->
+    <color name="platform_status_bar_text">#FF1D1B20</color>
+    <!-- 1. Sys/Whale/LM/On-Surface-Var N2-700: #454649 — nav handle -->
+    <color name="platform_nav_handle">#FF454649</color>
+
+</resources>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=412">
+<title>Android XML Layout — Phone Home 85:3451 (with real assets)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #E0E0E0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+
+  /* Phone frame */
+  .phone {
+    width: 412px;
+    height: 914px;
+    background: #FFFFFF; /* surface_canvas light */
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 2px #333, 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  /* Status bar area — reference */
+  .status-bar {
+    height: 36px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    font-size: 12px;
+    color: #1D1B20; /* platform_status_bar_text */
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Header background image */
+  .header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 412px;
+    height: 426px;
+    z-index: 0;
+    opacity: 0.6;
+    overflow: hidden;
+  }
+  .header-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Content */
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* Logo */
+  .logo {
+    width: 64px;
+    height: 64px;
+    margin-top: 123px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Search card */
+  .search-card {
+    width: 364px;
+    margin-top: 123px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 0.5px solid rgba(0,0,0,0.18);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 12px;
+  }
+
+  .search-input {
+    height: 56px;
+    padding: 4px 4px 0;
+    color: rgba(0,0,0,0.28);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    margin-top: 8px;
+  }
+
+  .mode-tab {
+    display: flex;
+    background: rgba(0,0,0,0.03);
+    border-radius: 8px;
+    padding: 2px;
+    height: 28px;
+  }
+
+  .tab-active {
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 0 8px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    color: rgba(0,0,0,0.88);
+    font-size: 12px;
+  }
+
+  .tab-inactive {
+    width: 52px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0,0,0,0.45);
+    font-size: 12px;
+  }
+
+  .engine {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    padding: 0 8px;
+    height: 28px;
+    border: 0.5px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    background: #FAFAFB;
+    gap: 4px;
+    color: rgba(0,0,0,0.88);
+    font-size: 12px;
+  }
+
+  .engine-dropdown {
+    width: 16px;
+    height: 16px;
+  }
+  .engine-dropdown img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .spacer { flex: 1; }
+
+  .icon-btn {
+    width: 24px;
+    height: 24px;
+  }
+  .icon-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .icon-btn.camera { margin-right: 16px; }
+
+  /* Site grid */
+  .grid {
+    width: 364px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .tile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .tile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .tile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .tile-label {
+    font-size: 12px;
+    color: rgba(0,0,0,0.88);
+    line-height: 18px;
+    text-align: center;
+  }
+
+  /* Bottom nav */
+  .bottom-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .bottom-nav {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 16px 24px 0;
+    background: #FFFFFF;
+  }
+
+  .nav-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .nav-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .system-bar {
+    height: 20px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-handle {
+    width: 94px;
+    height: 3.5px;
+    background: #454649;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Header background image -->
+  <div class="header-bg">
+    <img src="preview-assets/home_header_bg.png" alt="">
+  </div>
+
+  <!-- Status bar reference -->
+  <div class="status-bar">
+    <span>9:30</span>
+    <span>📶 🔋</span>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="preview-assets/brand_logo.png" alt="">
+    </div>
+
+    <!-- Search card -->
+    <div class="search-card">
+      <div class="search-input">告诉我想要了解的内容</div>
+      <div class="toolbar">
+        <div class="mode-tab">
+          <div class="tab-active">搜全网</div>
+          <div class="tab-inactive">问AI</div>
+        </div>
+        <div class="engine">
+          百度
+          <div class="engine-dropdown"><img src="preview-assets/engine_dropdown.png" alt=""></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="icon-btn camera"><img src="preview-assets/search_camera.png" alt=""></div>
+        <div class="icon-btn"><img src="preview-assets/search_microphone.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Site grid — 5 columns × 3 rows -->
+    <div class="grid">
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_bookmarks.png" alt=""></div><div class="tile-label">书签</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_history.png" alt=""></div><div class="tile-label">历史</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_curated.png" alt=""></div><div class="tile-label">精选</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_games.png" alt=""></div><div class="tile-label">游戏</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_weibo.png" alt=""></div><div class="tile-label">微博</div></div>
+      </div>
+      <!-- Row 2 -->
+      <div class="row">
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_novel.png" alt=""></div><div class="tile-label">小说</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_baidu.png" alt=""></div><div class="tile-label">百度</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_iqiyi.png" alt=""></div><div class="tile-label">爱奇艺</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_youku.png" alt=""></div><div class="tile-label">优酷</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_zhihu.png" alt=""></div><div class="tile-label">知乎</div></div>
+      </div>
+      <!-- Row 3 -->
+      <div class="row">
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_jd.png" alt=""></div><div class="tile-label">京东</div></div>
+        <div class="tile"><div class="tile-icon"><img src="preview-assets/shortcut_add.png" alt=""></div><div class="tile-label">添加</div></div>
+        <div class="tile"><div class="tile-icon"></div></div>
+        <div class="tile"><div class="tile-icon"></div></div>
+        <div class="tile"><div class="tile-icon"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom area -->
+  <div class="bottom-area">
+    <div class="bottom-nav">
+      <div class="nav-item"><div class="nav-icon"><img src="preview-assets/nav_recommend.png" alt=""></div></div>
+      <div class="nav-item"><div class="nav-icon"><img src="preview-assets/nav_video.png" alt=""></div></div>
+      <div class="nav-item"><div class="nav-icon"><img src="preview-assets/nav_home.png" alt=""></div></div>
+      <div class="nav-item"><div class="nav-icon"><img src="preview-assets/nav_reading.png" alt=""></div></div>
+      <div class="nav-item"><div class="nav-icon"><img src="preview-assets/nav_menu.png" alt=""></div></div>
+    </div>
+    <div class="system-bar">
+      <div class="nav-handle"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">联想浏览器</string>
+    <string name="search_placeholder">告诉我想要了解的内容</string>
+    <string name="search_web">搜全网</string>
+    <string name="ask_ai">问AI</string>
+    <string name="engine_name">百度</string>
+
+    <!-- Shortcut labels -->
+    <string name="shortcut_bookmarks">书签</string>
+    <string name="shortcut_history">历史</string>
+    <string name="shortcut_curated">精选</string>
+    <string name="shortcut_games">游戏</string>
+    <string name="shortcut_weibo">微博</string>
+    <string name="shortcut_novel">小说</string>
+    <string name="shortcut_baidu">百度</string>
+    <string name="shortcut_iqiyi">爱奇艺</string>
+    <string name="shortcut_youku">优酷</string>
+    <string name="shortcut_zhihu">知乎</string>
+    <string name="shortcut_jd">京东</string>
+    <string name="shortcut_add">添加</string>
+</resources>

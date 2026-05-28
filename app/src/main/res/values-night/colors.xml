@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Browser Color System v3.0 — Dark mode
+    Source: Figma tJamKVuAm0fELLoddNqQ9A
+    Specification: 🎨 Browser Color System v3.0 (106:3910)
+    Variable collection: 浏览器色彩 / Browser Color v3.0
+    Synced: 2026-05-28
+
+    Dark-mode alpha deltas from light (confirmed in v3.0 collection):
+      fill/quinary    6% →  4%  (0.03 → 0.04)
+      fill/quaternary 10% →  8%  (0.06 → 0.08)
+      fill/tertiary   16% → 14%  (0.10 → 0.14)
+      text/tertiary   30% → 45%  (0.30 → 0.45)
+      border/subtle    8% →  6%  (0.04 → 0.06)
+      border/regular  14% → 12%  (0.08 → 0.12)
+      border/strong   22% → 20%  (0.18 → 0.20)
+-->
+
+<resources>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Text — Figma: text 文字 (alpha, base #FFFFFF in dark)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- text 文字/primary · 标题正文         rgba(255,255,255,0.92) → #ffffffeb -->
+    <color name="text_primary">#EBFFFFFF</color>
+    <!-- text 文字/secondary · 次级说明       rgba(255,255,255,0.65) → #ffffffa6 -->
+    <color name="text_secondary">#A6FFFFFF</color>
+    <!-- text 文字/tertiary · 辅助信息        rgba(255,255,255,0.45) → #ffffff73 -->
+    <color name="text_tertiary">#73FFFFFF</color>
+    <!-- text 文字/placeholder · 输入提示      rgba(255,255,255,0.30) → #ffffff4d -->
+    <color name="text_placeholder">#4DFFFFFF</color>
+    <!-- text 文字/disabled · 禁用文字        rgba(255,255,255,0.24) → #ffffff3d -->
+    <color name="text_disabled">#3DFFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Fill — Figma: fill 填充 (alpha, base #FFFFFF in dark)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- fill 填充/primary · 标签色标        rgba(255,255,255,0.36) → #ffffff5c -->
+    <color name="fill_primary">#5CFFFFFF</color>
+    <!-- fill 填充/secondary · 按捺选中       rgba(255,255,255,0.22) → #ffffff38 -->
+    <color name="fill_secondary">#38FFFFFF</color>
+    <!-- fill 填充/tertiary · 悬浮态 (14%)   rgba(255,255,255,0.14) → #ffffff24 -->
+    <color name="fill_tertiary">#24FFFFFF</color>
+    <!-- fill 填充/quaternary · 弱次级默认 (8%) rgba(255,255,255,0.08) → #ffffff14 -->
+    <color name="fill_quaternary">#14FFFFFF</color>
+    <!-- fill 填充/quinary · 极弱轻悬停 (4%)  rgba(255,255,255,0.04) → #ffffff0a -->
+    <color name="fill_quinary">#0AFFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Border — Figma: border 边框 (alpha, base #FFFFFF in dark)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- border 边框/inverse · 反色          rgba(255,255,255,0.85) → #ffffffd9 -->
+    <color name="border_inverse">#D9FFFFFF</color>
+    <!-- border 边框/strong · 强 (20%)       rgba(255,255,255,0.20) → #ffffff33 -->
+    <color name="border_strong">#33FFFFFF</color>
+    <!-- border 边框/regular · 常规 (12%)    rgba(255,255,255,0.12) → #ffffff1f -->
+    <color name="border_regular">#1FFFFFFF</color>
+    <!-- border 边框/subtle · 弱 (6%)        rgba(255,255,255,0.06) → #ffffff0f -->
+    <color name="border_subtle">#0FFFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Surface — Figma: surface 表面 (opaque, dark mode)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- surface 表面/canvas · 页面主底色      #1C1C1E -->
+    <color name="surface_canvas">#FF1C1C1E</color>
+    <!-- surface 表面/raised · 弹窗高浮层       #3A3A3C -->
+    <color name="surface_raised">#FF3A3A3C</color>
+    <!-- surface 表面/elevated · 卡片工具栏     #2C2C2E -->
+    <color name="surface_elevated">#FF2C2C2E</color>
+    <!-- surface 表面/sunken · 最深            #000000 -->
+    <color name="surface_sunken">#FF000000</color>
+    <!-- surface 表面/inverse · 反色容器       #F2F2F7 -->
+    <color name="surface_inverse">#FFF2F2F7</color>
+    <color name="surface_transparent">#001C1C1E</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Semantic backgrounds — dark mode higher opacity
+         ═══════════════════════════════════════════════════════════════════ -->
+
+    <!-- Success bg (dark: higher opacity for visibility) -->
+    <color name="success_bg_default">#3316A34A</color>
+    <color name="success_bg_hover">#4716A34A</color>
+    <color name="success_bg_pressed">#5C16A34A</color>
+    <color name="success_border">#7A16A34A</color>
+
+    <!-- Warning bg -->
+    <color name="warning_bg_default">#33F59E0B</color>
+    <color name="warning_bg_hover">#47F59E0B</color>
+    <color name="warning_bg_pressed">#5CF59E0B</color>
+    <color name="warning_border">#7AF59E0B</color>
+
+    <!-- Danger bg -->
+    <color name="danger_bg_default">#33DC2626</color>
+    <color name="danger_bg_hover">#47DC2626</color>
+    <color name="danger_bg_pressed">#5CDC2626</color>
+    <color name="danger_border">#7ADC2626</color>
+
+    <!-- Info bg -->
+    <color name="info_bg_default">#332563EB</color>
+    <color name="info_bg_hover">#472563EB</color>
+    <color name="info_bg_pressed">#5C2563EB</color>
+    <color name="info_border">#7A2563EB</color>
+
+</resources>

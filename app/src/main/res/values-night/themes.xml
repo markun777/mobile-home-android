@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Browser Color System v3.0 — Dark theme
+    Source: Figma 浏览器色彩 / Browser Color v3.0
+-->
+<resources>
+    <style name="Theme.MobileHome" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_base</item>
+        <item name="colorPrimaryVariant">@color/brand_strong</item>
+        <item name="colorOnPrimary">@color/surface_inverse</item>
+        <item name="colorSurface">@color/surface_canvas</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:windowBackground">@color/surface_canvas</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

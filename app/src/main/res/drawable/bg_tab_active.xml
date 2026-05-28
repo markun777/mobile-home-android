@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Active tab item background: surface_raised rounded pill -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/radius_tab_item" />
+    <solid android:color="@color/surface_raised" />
+</shape>
