@@ -4,7 +4,7 @@ Last updated: `2026-05-29`
 
 ## Current Status
 
-`Phone home XML layout implemented and HTML-preview verified; shortcut labels corrected against Figma 85:3451`
+`Phone default XML implemented, labels corrected, build-verified, and emulator-rendered`
 
 ## Decision Sync
 
@@ -52,20 +52,32 @@ Last updated: `2026-05-29`
 | `xml-preview.html` updated | ✅ done | Labels synced with strings.xml |
 | HTML preview screenshot | ✅ done | `docs/xml-preview-screenshot.png` — all 12 tiles render correctly |
 
+## Completed — Build And Emulator Verification ✅
+
+| Step | Status | Evidence |
+|---|---|---|
+| Gradle wrapper | ✅ done | `gradlew`, `gradlew.bat`, `gradle/wrapper/*` committed; wrapper uses Gradle `8.9` with extended network timeout |
+| Gradle properties | ✅ done | `android.useAndroidX=true`, `org.gradle.java.home=/opt/homebrew/opt/openjdk@17` |
+| Native build | ✅ done | `./gradlew assembleDebug` passed with JDK `17.0.19`, Android SDK platform `android-35`, build tools `34.0.0` |
+| APK output | ✅ done | `app/build/outputs/apk/debug/app-debug.apk` generated locally |
+| Emulator install/render | ✅ done | Installed and launched `com.lenovo.mobilehome/.MainActivity` on `MobileHomePhone_API35` |
+| Device profile | ✅ done | `1080 x 2340`, density `440` |
+| Screenshot evidence | ✅ done | `docs/android-emulator-phone-default.png` |
+
 ## Board Status
 
 | Board | Node | Expo Preview | Formal XML Delivery |
 |---|---|---|---|
-| Phone home default | `85:3451` | reference exists | ✅ **implemented** (`activity_main.xml`) |
+| Phone home default | `85:3451` | reference exists | ✅ **implemented, build-verified, emulator-rendered** |
 | Phone Ask AI | `91:4404` | deferred | deferred until XML default verified |
 | Pad home default | `91:5128` | deferred | independent composition pending |
 
 ## Migration Sequence Remaining
 
-5. Build native app and verify on Android emulator/device
-6. Record screenshot evidence, device profile, inset handling
-7. Begin Ask AI or Pad only after Phone XML evidence is recorded
-8. Once XML delivery is accepted, relocate Expo to `preview/expo/`
+1. Review the emulator screenshot against Figma `85:3451` and record any
+   pixel/geometry drift before final Phone acceptance.
+2. Begin Ask AI or Pad only after Phone XML visual review is accepted.
+3. Once XML delivery is accepted, relocate Expo to `preview/expo/`.
 
 ## Token Source Policy
 

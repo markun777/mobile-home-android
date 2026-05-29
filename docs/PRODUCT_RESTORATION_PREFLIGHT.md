@@ -1,6 +1,6 @@
 # Product Restoration Preflight
 
-Status: `delivery-profile-confirmed-xml-migration-pending`
+Status: `phone-default-xml-build-and-render-verified`
 
 ## Source And Delivery Runtime
 
@@ -26,7 +26,7 @@ Status: `delivery-profile-confirmed-xml-migration-pending`
 
 | Surface | Figma Node | Preview State | Formal XML Delivery Gate |
 |---|---|---|---|
-| Phone home default | `85:3451` | implemented in Expo preview | native project/token resources and Phone XML pending |
+| Phone home default | `85:3451` | implemented in Expo preview | XML implemented; build and emulator render verified |
 | Phone Ask AI | `91:4404` | mapped only | defer until XML default board verified |
 | Pad home default | `91:5128` | mapped only | independent XML composition pending |
 
@@ -36,8 +36,8 @@ Status: `delivery-profile-confirmed-xml-migration-pending`
 |---|---|---|
 | `FIGMA_BOARD_STATE_MAP.md` | `[x]` | Phone and Pad sources mapped; delivery statuses reset for XML |
 | `LAYOUT_CONSTANTS.md` | `[x]` | Phone geometry and Pad separation recorded |
-| `TOKEN_SNAPSHOT.md` | `[x]` | v3.0 contract recorded; XML resource output still pending |
-| `ASSET_MANIFEST.md` | `[x]` | Existing preview assets recorded; Android packaging mapping pending |
+| `TOKEN_SNAPSHOT.md` | `[x]` | v3.0 contract and Android XML resources recorded |
+| `ASSET_MANIFEST.md` | `[x]` | Preview assets and native drawable packaging recorded |
 | `INTERACTION_CONTRACT.md` | `[x]` | First-slice boundaries recorded |
 | `XML_DELIVERY_TRANSITION.md` | `[x]` | Delivery-stack decision and migration order recorded |
 
@@ -47,17 +47,18 @@ Status: `delivery-profile-confirmed-xml-migration-pending`
 - `[x]` Expo reclassified as preview/reference only.
 - `[x]` Phone and Pad source nodes and v3.0 token baseline remain valid.
 - `[ ]` Relocate or isolate Expo under `preview/expo/`.
-- `[ ]` Create native Android Views/XML application scaffold.
-- `[ ]` Map v3.0 semantic tokens into Android resource XML.
-- `[ ]` Package Phone assets for native resource use.
-- `[ ]` Implement Phone default XML board.
+- `[x]` Create native Android Views/XML application scaffold.
+- `[x]` Map v3.0 semantic tokens into Android resource XML.
+- `[x]` Package Phone assets for native resource use.
+- `[x]` Implement Phone default XML board.
 
 ## Delivery Verification Gate
 
-- `[ ]` Native Android build succeeds for the XML implementation.
-- `[ ]` Phone XML screen rendered on a named Android emulator/device.
-- `[ ]` Pixel/geometry comparison against `85:3451` recorded.
-- `[ ]` Packaged resource and light/dark token resolution verified.
+- `[x]` Native Android build succeeds for the XML implementation.
+- `[x]` Phone XML screen rendered on a named Android emulator/device.
+- `[x]` Initial screenshot evidence against `85:3451` recorded.
+- `[x]` Packaged resource resolution verified in local debug build/render.
+- `[ ]` Detailed pixel/geometry drift review against `85:3451` accepted.
 - `[ ]` Pad XML implementation and tablet render verification completed.
 
 Do not claim Android XML delivery complete from the existing Expo preview or

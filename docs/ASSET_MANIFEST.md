@@ -12,16 +12,17 @@
 
 | Role | Current Expo Preview Asset | Native XML Delivery Mapping |
 |---|---|---|
-| Header background | `assets/images/home_header_bg.png` | pending `drawable*` packaging from `140:5044` |
-| Brand logo | `assets/icons/brand_logo.png` | pending `drawable*` packaging; `64 x 64` render target |
-| Search actions | `assets/icons/search_camera.png`, `search_microphone.png`, `engine_dropdown.png` | pending `drawable*` packaging |
-| Shortcut tiles | `assets/icons/shortcut_*.png` | pending `drawable*` packaging |
-| Bottom navigation | `assets/icons/nav_*.png` | pending `drawable*` packaging |
+| Header background | `assets/images/home_header_bg.png` | packaged as `@drawable/home_header_bg`; not rendered after design review removed the header image |
+| Brand logo | `assets/icons/brand_logo.png` | `@drawable/brand_logo`, rendered at `64 x 64` |
+| Search actions | `assets/icons/search_camera.png`, `search_microphone.png`, `engine_dropdown.png` | `@drawable/search_camera`, `@drawable/search_microphone`, `@drawable/engine_dropdown` |
+| Shortcut tiles | `assets/icons/shortcut_*.png` | `@drawable/shortcut_*` |
+| Bottom navigation | `assets/icons/nav_*.png` | `@drawable/nav_*`; formal XML currently uses recommend, video, home, reading, and menu |
+| XML shape drawables | n/a | `bg_search_mode_tab`, `bg_tab_active`, `bg_engine_selector`, `bg_nav_handle` |
 
 ## Verification
 
 - `[x]` Assets used by the Expo Phone preview are committed in the project.
 - `[x]` Expo web export previously resolved preview assets.
-- `[ ]` Assets are mapped into native Android resource packaging.
-- `[ ]` XML application package/runtime renders assets on a named
+- `[x]` Assets are mapped into native Android resource packaging.
+- `[x]` XML application package/runtime renders assets on a named
       emulator/device.

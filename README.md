@@ -16,13 +16,28 @@ Confirmed on `2026-05-27`:
 
 ## Current State
 
-- Phone default exists in the current Expo preview implementation from Figma
-  node `85:3451`.
-- Formal XML Phone implementation has not started.
+- Phone default XML implementation exists in `app/src/main/res/layout/`
+  from Figma node `85:3451`.
+- `./gradlew assembleDebug` passes with JDK 17 and the Android SDK.
+- The debug APK has been installed and rendered on
+  `MobileHomePhone_API35` (`1080 x 2340`, density `440`); evidence is recorded
+  in `docs/android-emulator-phone-default.png`.
 - Pad remains a separately composed surface from node `91:5128`; it is not a
   scaled Phone layout.
 - The current Expo files remain at repository root until the migration step
   moves them under `preview/expo/`.
+
+## Build
+
+Use JDK 17. On this machine the project pins:
+
+```sh
+./gradlew assembleDebug
+```
+
+If Android SDK discovery is not configured globally, pass `ANDROID_HOME` or
+`ANDROID_SDK_ROOT` to a local SDK that contains platform `android-35` and build
+tools `34.0.0`.
 
 ## Target Repository Shape
 
