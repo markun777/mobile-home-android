@@ -1,10 +1,10 @@
 # Progress
 
-Last updated: `2026-05-28`
+Last updated: `2026-05-29`
 
 ## Current Status
 
-`Delivery profile switched to Android XML; Expo retained as preview/reference; native token resources generated`
+`Phone home XML layout implemented and HTML-preview verified; shortcut labels corrected against Figma 85:3451`
 
 ## Decision Sync
 
@@ -42,6 +42,15 @@ Last updated: `2026-05-28`
 | 3. Nav handle drawable | ✅ done | `bg_nav_handle.xml` — rounded pill, `platform_nav_handle` color |
 | 4. Shortcut labels in `strings.xml` | ✅ done | 12 Chinese labels added |
 | 5. Resource reference audit | ✅ done | All 57 `@color`/`@dimen`/`@drawable`/`@string` references verified |
+
+## Completed — Phase 4 (Label Correction + HTML Preview Verification) ✅
+
+| Step | Status | Notes |
+|---|---|---|
+| Shortcut label audit vs Figma 85:3451 | ✅ done | 4 labels corrected: 历史→历史记录, 精选→网址精选, 游戏→小游戏, 小说→免费小说 |
+| `strings.xml` updated | ✅ done | All 12 shortcut labels now match Figma node text |
+| `xml-preview.html` updated | ✅ done | Labels synced with strings.xml |
+| HTML preview screenshot | ✅ done | `docs/xml-preview-screenshot.png` — all 12 tiles render correctly |
 
 ## Board Status
 
