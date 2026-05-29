@@ -11,18 +11,6 @@
     android:background="@color/surface_canvas">
 
     <!-- ═══════════════════════════════════════════════════════════════════════
-         Header background — 412×426dp, opacity 0.6
-         ═══════════════════════════════════════════════════════════════════ -->
-    <ImageView
-        android:id="@+id/header_bg"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/header_bg_height"
-        android:scaleType="centerCrop"
-        android:alpha="0.6"
-        android:src="@drawable/home_header_bg"
-        android:contentDescription="@null" />
-
-    <!-- ═══════════════════════════════════════════════════════════════════════
          Scrollable content area
          ═══════════════════════════════════════════════════════════════════ -->
     <androidx.core.widget.NestedScrollView
