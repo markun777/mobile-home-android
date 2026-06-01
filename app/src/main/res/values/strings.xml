@@ -7,7 +7,7 @@
 
     <!-- Bottom nav labels — Figma 571:44695 -->
     <string name="nav_home">主页</string>
-    <string name="nav_news">资讯</string>
+    <string name="nav_recommend">推荐</string>
     <string name="nav_video">视频</string>
     <string name="nav_novel">小说</string>
     <string name="nav_menu">菜单</string>

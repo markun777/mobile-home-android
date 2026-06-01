@@ -5,7 +5,7 @@
     Browser Color System v3.0 token mappings applied throughout.
 
     Changes from 85:3451 baseline:
-    - Bottom nav: icon-only → icon+label (主页/资讯/视频/小说/菜单)
+    - Bottom nav: icon-only → icon+label (主页/推荐/视频/小说/菜单)
     - Tab manager button added (top-right, 28×28dp)
     - Search placeholder: 告诉我想要了解的内容 → 输入关键信息
     - Search AI tab: 问AI → AI搜索
@@ -391,14 +391,14 @@
                     android:textSize="10sp" android:gravity="center" />
             </LinearLayout>
 
-            <!-- 资讯 -->
+            <!-- 推荐 -->
             <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
                 android:layout_weight="1" android:orientation="vertical"
                 android:gravity="center" android:padding="2dp">
                 <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                    android:src="@drawable/ic_nav_news" android:contentDescription="@null" />
+                    android:src="@drawable/ic_nav_recommend" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/nav_news" android:textColor="@color/text_primary"
+                    android:text="@string/nav_recommend" android:textColor="@color/text_primary"
                     android:textSize="10sp" android:gravity="center" />
             </LinearLayout>
 
