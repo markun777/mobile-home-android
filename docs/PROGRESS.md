@@ -1,10 +1,10 @@
 # Progress
 
-Last updated: `2026-05-29`
+Last updated: `2026-06-01`
 
 ## Current Status
 
-`Phone default XML implemented, labels corrected, build-verified, and emulator-rendered`
+`Phone default XML updated to Figma 571:44695 — bottom nav labels, tab manager, shortcut reorder; committed and pushed; awaiting emulator re-verification`
 
 ## Decision Sync
 
@@ -64,20 +64,34 @@ Last updated: `2026-05-29`
 | Device profile | ✅ done | `1080 x 2340`, density `440` |
 | Screenshot evidence | ✅ done | `docs/android-emulator-phone-default.png` |
 
+## Completed — Phase 5 (Figma 571:44695 Update) ✅
+
+| Step | Status | Notes |
+|---|---|---|
+| Bottom nav icon+label | ✅ done | 主页/资讯/视频/小说/菜单，LinearLayout vertical per tab |
+| Tab manager button | ✅ done | Top-right 28×28dp, `ic_tab_manager` drawable |
+| Search placeholder update | ✅ done | 告诉我想要了解的内容 → 输入关键信息 |
+| AI tab label update | ✅ done | 问AI → AI搜索 |
+| Search card resize | ✅ done | 380dp wide (16dp margin), stroke 1dp, input 50dp/14sp |
+| Shortcut grid reorder + 短剧 | ✅ done | Row1: 书签/历史记录/免费小说/短剧/小游戏 |
+| Engine selector removed | ✅ done | Toolbar simplified to mode tab + camera/voice |
+| New drawables | ✅ done | ic_nav_home/news/video/novel/menu, ic_tab_manager, nav_home_v2, nav_news, shortcut_drama, tab_manager_bg/icon |
+| Commit + push | ✅ done | `8705764` on `phone-xml-layout` |
+
 ## Board Status
 
 | Board | Node | Expo Preview | Formal XML Delivery |
 |---|---|---|---|
-| Phone home default | `85:3451` | reference exists | ✅ **implemented, build-verified, emulator-rendered** |
-| Phone Ask AI | `91:4404` | deferred | deferred until XML default verified |
+| Phone home default | `571:44695` | reference exists | ✅ **updated, committed — emulator re-verify pending** |
+| Phone Ask AI | `91:4404` | deferred | deferred |
 | Pad home default | `91:5128` | deferred | independent composition pending |
 
 ## Migration Sequence Remaining
 
-1. Review the emulator screenshot against Figma `85:3451` and record any
-   pixel/geometry drift before final Phone acceptance.
-2. Begin Ask AI or Pad only after Phone XML visual review is accepted.
-3. Once XML delivery is accepted, relocate Expo to `preview/expo/`.
+1. Run `./gradlew assembleDebug` + emulator install on updated APK, capture screenshot.
+2. Visual review against Figma `571:44695` — record any pixel/geometry drift.
+3. Begin Ask AI or Pad only after Phone XML visual review accepted.
+4. Once XML delivery accepted, relocate Expo to `preview/expo/`.
 
 ## Token Source Policy
 
