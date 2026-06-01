@@ -5,384 +5,287 @@
 <meta name="viewport" content="width=1280">
 <title>Pad Home — 91:5128</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  display:flex; justify-content:center; align-items:flex-start;
-  min-height:100vh; background:#E0E0E0; padding:20px 0;
-  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-}
-.pad {
-  width:1280px; min-height:800px; background:#fff; border-radius:24px;
-  overflow:hidden; box-shadow:0 0 0 2px #333,0 20px 60px rgba(0,0,0,0.3);
-  flex-shrink:0;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;background:#e0e0e0;padding:20px 0;font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.pad{width:1280px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 0 0 2px #333,0 20px 60px rgba(0,0,0,.3);flex-shrink:0}
 
-/* ── Status bar (36dp) ── */
-.status-bar {
-  height:36px; display:flex; align-items:center;
-  justify-content:space-between; padding:0 24px;
-  font-size:14px; font-weight:500; color:rgba(0,0,0,0.88);
-}
-.status-icons { display:flex; gap:6px; align-items:center; }
+/* ── Status bar 36dp ── */
+.sb{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:14px;font-weight:500;color:rgba(0,0,0,.88)}
+.sb-i{display:flex;gap:6px;align-items:center}
 
-/* ── Tab bar (58dp area from y=17) ── */
-.tab-bar {
-  display:flex; align-items:flex-end; height:38px;
-  padding:0 12px; gap:0;
-}
-.tab {
-  display:flex; align-items:center; height:30px; min-width:0;
-  padding:4px 12px 4px 8px;
-  border-radius:8px 8px 0 0; gap:6px;
-  font-size:12px; color:rgba(0,0,0,0.6); cursor:pointer;
-}
-.tab.active { background:#fff; color:rgba(0,0,0,0.88); }
-.tab .tab-dot { width:16px; height:16px; border-radius:3px; background:#ddd; flex-shrink:0; }
-.tab .tab-close { width:14px; height:14px; flex-shrink:0; opacity:0.3; cursor:pointer; }
-.tab-new { width:24px; height:24px; margin:0 4px 3px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:16px; color:rgba(0,0,0,0.45); }
+/* ── Tab bar y=17..75 ── */
+.tabs{display:flex;align-items:flex-end;height:38px;padding:0 12px}
+.tab{display:flex;align-items:center;height:30px;min-width:0;padding:4px 12px 4px 8px;border-radius:8px 8px 0 0;gap:6px;font-size:12px;color:rgba(0,0,0,.6);cursor:pointer}
+.tab.on{background:#fff;color:rgba(0,0,0,.88)}
+.tab .td{width:16px;height:16px;border-radius:3px;flex-shrink:0}
+.tab .td.g1{background:linear-gradient(135deg,#667eea,#764ba2)}
+.tab .tx{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.tab .tc{width:14px;height:14px;opacity:.3;cursor:pointer;flex-shrink:0}
+.tab-add{width:24px;height:24px;margin:0 4px 3px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:rgba(0,0,0,.45)}
 
-/* ── Address bar (58dp, y=75) ── */
-.addr-bar {
-  display:flex; align-items:center; height:44px;
-  padding:0 16px; gap:0;
-}
-.nav-btns { display:flex; gap:4px; align-items:center; margin-right:10px; }
-.nav-btn { width:24px; height:24px; opacity:0.3; display:flex; align-items:center; justify-content:center; }
-.nav-btn.enabled { opacity:1; }
-.nav-btn img { width:24px; height:24px; object-fit:contain; }
+/* ── Address bar y=75..133, 58dp ── */
+.addr{display:flex;align-items:center;height:44px;padding:0 16px}
+.nav-btns{display:flex;gap:4px;align-items:center;margin-right:10px}
+.nav-b{width:24px;height:24px;opacity:.3;display:flex;align-items:center;justify-content:center}
+.nav-b.on{opacity:1}
+.nav-b img{width:24px;height:24px;object-fit:contain}
+.nav-b svg{width:24px;height:24px}
 
-.addr-input {
-  flex:1; height:36px; display:flex; align-items:center;
-  background:#F5F5F5; border-radius:8px; padding:0 16px; gap:8px; margin:0 12px;
-}
-.addr-input span { font-size:13px; color:rgba(0,0,0,0.45); }
+.addr-in{flex:1;height:36px;display:flex;align-items:center;background:#f5f5f5;border-radius:8px;padding:0 16px;gap:8px;margin:0 12px}
+.addr-in span{font-size:13px;color:rgba(0,0,0,.45)}
+.addr-act{display:flex;gap:12px;align-items:center}
+.addr-a{width:24px;height:24px;display:flex;align-items:center;justify-content:center}
+.addr-a img{width:24px;height:24px;object-fit:contain}
+.addr-r{display:flex;align-items:center;margin-left:8px}
+.addr-r .ai{width:24px;height:24px;display:flex;align-items:center;justify-content:center;margin-left:4px}
+.addr-r .ai:first-child{margin-left:0}
+.addr-r img{width:24px;height:24px;object-fit:contain}
 
-.addr-actions { display:flex; gap:12px; align-items:center; }
-.addr-action { width:24px; height:24px; display:flex; align-items:center; justify-content:center; }
-.addr-action img { width:24px; height:24px; object-fit:contain; }
-
-.addr-right { display:flex; gap:8px; align-items:center; margin-left:8px; }
-.addr-right-item { width:24px; height:24px; display:flex; align-items:center; justify-content:center; }
-
-/* Divider under chrome */
-.chrome-divider { height:1px; background:#eee; }
+/* divider */
+.cd{height:1px;background:#eee}
 
 /* ── Content ── */
-.content { display:flex; flex-direction:column; align-items:center; padding:40px 0 0; }
-.content-inner { width:760px; }
-
+.ct{display:flex;flex-direction:column;align-items:center;padding:40px 260px 0;gap:0}
 /* Logo 80dp */
-.logo { width:80px; height:80px; margin:0 auto 48px; }
-.logo img { width:80px; height:80px; object-fit:contain; }
+.logo{width:80px;height:80px;margin:0 auto 48px}
+.logo img{width:80px;height:80px;object-fit:contain}
 
-/* Search card */
-.search-card {
-  background:#fff; border:1px solid rgba(0,0,0,0.18);
-  border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.06);
-  padding:12px; margin-bottom:48px;
-}
-.search-input { height:50px; padding:4px; font-size:14px; color:rgba(0,0,0,0.28); display:flex; align-items:flex-start; }
-.search-toolbar { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
-.toolbar-left { display:flex; align-items:center; }
-.mode-tab {
-  display:flex; background:rgba(0,0,0,0.06); border:0.5px solid rgba(0,0,0,0.04);
-  border-radius:8px; padding:2px; height:28px; gap:2px;
-}
-.mode-tab .active {
-  background:#fff; border:0.5px solid rgba(0,0,0,0.04); border-radius:6px;
-  padding:0 8px; height:24px; display:flex; align-items:center; font-size:12px; color:rgba(0,0,0,0.88);
-}
-.mode-tab .inactive {
-  width:52px; height:24px; display:flex; align-items:center; justify-content:center;
-  font-size:12px; color:rgba(0,0,0,0.45); cursor:pointer;
-}
-.model-switch {
-  display:flex; align-items:center; gap:4px; height:28px; padding:4px;
-  border:0.5px solid rgba(0,0,0,0.08); border-radius:8px; margin-left:8px;
-  font-size:12px; color:rgba(0,0,0,0.45); cursor:pointer;
-}
-.model-switch img { width:20px; height:20px; object-fit:contain; }
-.spacer { flex:1; }
-.toolbar-actions { display:flex; gap:16px; align-items:center; }
-.toolbar-actions .act { width:28px; height:28px; display:flex; align-items:center; justify-content:center; }
-.toolbar-actions .act img { width:24px; height:24px; object-fit:contain; }
+/* Search card — 760×110, y=128 from hero top */
+.sc{width:760px;background:#fff;border:1px solid rgba(0,0,0,.18);border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.06);padding:12px;margin-bottom:48px}
+.sc-i{height:50px;padding:4px;font-size:14px;color:rgba(0,0,0,.28);display:flex;align-items:flex-start}
+.sc-tb{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.tl{display:flex;align-items:center}
+.mode{display:flex;background:rgba(0,0,0,.06);border:.5px solid rgba(0,0,0,.04);border-radius:8px;padding:2px;height:28px;gap:2px}
+.mode .on{background:#fff;border:.5px solid rgba(0,0,0,.04);border-radius:6px;padding:0 8px;height:24px;display:flex;align-items:center;font-size:12px;color:rgba(0,0,0,.88)}
+.mode .off{width:52px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(0,0,0,.45);cursor:pointer}
+.ms{display:flex;align-items:center;gap:4px;height:28px;padding:4px;border:.5px solid rgba(0,0,0,.08);border-radius:8px;margin-left:8px;font-size:12px;color:rgba(0,0,0,.45);cursor:pointer}
+.ms img{width:20px;height:20px;object-fit:contain}
+.spr{flex:1}
+.acts{display:flex;gap:16px;align-items:center}
+.act{width:28px;height:28px;display:flex;align-items:center;justify-content:center}
+.act img{width:24px;height:24px;object-fit:contain}
 
-/* Shortcuts */
-.shortcuts { display:flex; justify-content:center; gap:0; margin-bottom:24px; }
-.shortcut-item {
-  width:108px; display:flex; flex-direction:column; align-items:center;
-  gap:11px; padding:8px 2px; border-radius:8px; cursor:pointer;
-}
-.shortcut-item .s-icon { width:52px; height:52px; display:flex; align-items:center; justify-content:center; }
-.shortcut-item .s-icon img { width:52px; height:52px; object-fit:contain; }
-.shortcut-item .s-label { font-size:12px; color:rgba(0,0,0,0.88); text-align:center; }
+/* ── Shortcuts — 7 items × 72.57dp, gap 42dp, total 760 ── */
+.sh{display:flex;justify-content:center;width:760px;margin-bottom:24px}
+.sh-it{width:72.57px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;flex-shrink:0}
+.sh-it+.sh-it{margin-left:42px}
+.sh-ic{width:52px;height:52px;display:flex;align-items:center;justify-content:center}
+.sh-ic img{width:52px;height:52px;object-fit:contain}
+.sh-lb{font-size:12px;color:rgba(0,0,0,.88);text-align:center;white-space:nowrap}
 
-/* Switch btn */
-.switch-area { display:flex; justify-content:center; padding:20px 0 32px; }
-.switch-btn { padding:8px 12px; border:0.5px solid rgba(0,0,0,0.1); border-radius:8px; font-size:12px; color:rgba(0,0,0,0.45); cursor:pointer; background:none; }
+/* ── Switch ── */
+.sw{display:flex;justify-content:center;padding:20px 0 32px}
+.sw span{padding:8px 12px;border:.5px solid rgba(0,0,0,.1);border-radius:8px;font-size:12px;color:rgba(0,0,0,.45);cursor:pointer}
 
-/* ── Two columns ── */
-.two-col { display:flex; gap:16px; justify-content:center; padding-bottom:40px; }
-.col { width:392px; display:flex; flex-direction:column; gap:16px; }
+/* ── Two-column grid 800dp, gap 16dp ── */
+.grid{display:flex;gap:16px}
+.col{width:392px;display:flex;flex-direction:column;gap:16px}
 
-/* Section card */
-.section { background:#fff; border-radius:12px; border:0.5px solid #eee; overflow:hidden; }
-.section-hd {
-  display:flex; align-items:center; justify-content:space-between; padding:16px;
-}
-.section-hd h3 { font-size:14px; font-weight:500; color:rgba(0,0,0,0.88); }
-.section-hd .more { font-size:12px; color:rgba(0,0,0,0.45); display:flex; align-items:center; gap:4px; cursor:pointer; background:none; border:none; }
+/* Section */
+.sec{background:#fff;border-radius:12px;border:.5px solid #eee;overflow:hidden}
+.sechd{display:flex;align-items:center;justify-content:space-between;padding:16px}
+.sechd h3{font-size:14px;font-weight:500;color:rgba(0,0,0,.88)}
+.sechd .mr{font-size:12px;color:rgba(0,0,0,.45);display:flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none}
 
-/* Utility cards */
-.util-grid { display:flex; gap:8px; padding:0 16px 16px; }
-.util-card {
-  flex:1; height:156px; border-radius:8px; position:relative; overflow:hidden;
-}
-.util-card.purple { background:linear-gradient(135deg,#667eea,#764ba2); }
-.util-card.pink   { background:linear-gradient(135deg,#f093fb,#f5576c); }
-.util-card.peach  { background:linear-gradient(135deg,#a18cd1,#fbc2eb); }
-.util-card.warm   { background:linear-gradient(135deg,#ffecd2,#fcb69f); }
-.util-card .u-title {
-  position:absolute; bottom:8px; left:8px; right:8px;
-  color:#fff; font-size:12px; font-weight:500; text-shadow:0 1px 2px rgba(0,0,0,0.2);
-}
+/* Utility — 2 tall cards 176×313dp, gap 8dp */
+.uc{display:flex;gap:8px;padding:0 16px 16px}
+.uc .card{flex:1;height:313px;border-radius:8px;position:relative;overflow:hidden}
+.uc .card.pu{background:linear-gradient(135deg,#667eea,#764ba2)}
+.uc .card.pk{background:linear-gradient(135deg,#f093fb,#f5576c)}
+.uc .card.pe{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
+.uc .card.wa{background:linear-gradient(135deg,#ffecd2,#fcb69f)}
+.uc .card .ctt{position:absolute;bottom:8px;left:8px;right:8px;color:#fff;font-size:12px;font-weight:500;text-shadow:0 1px 2px rgba(0,0,0,.2)}
 
-/* News */
-.news-tabs { display:flex; gap:16px; padding:0 16px 8px; }
-.news-tab {
-  font-size:14px; color:rgba(0,0,0,0.45); cursor:pointer; padding:2px 4px;
-  background:none; border:none;
-}
-.news-tab.active { color:rgba(0,0,0,0.88); font-weight:500; }
-.news-list { padding:0 16px; }
-.news-item { padding:16px 0; border-top:1px solid #f0f0f0; }
-.news-item:first-child { border-top:none; }
-.news-item h4 { font-size:14px; color:rgba(0,0,0,0.88); line-height:1.5; margin-bottom:8px; }
-.news-imgs { display:flex; gap:4px; margin-bottom:8px; }
-.news-imgs .ni { width:117px; height:88px; border-radius:6px; background:#eee; }
-.news-meta { font-size:11px; color:rgba(0,0,0,0.4); }
-.news-side { display:flex; gap:12px; }
-.news-side .ns-img { width:114px; height:86px; border-radius:6px; background:#eee; flex-shrink:0; }
-.news-side .ns-text { flex:1; }
+/* Videos */
+.vs{padding:0 16px 16px}
+.vr{display:flex;gap:8px}
+.vc{flex:1}
+.vth{height:99px;border-radius:8px;background:#eee;position:relative;overflow:hidden}
+.vth .vd{position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;padding:1px 4px;border-radius:2px}
+.vi{padding:8px 0}
+.vi .vt{font-size:13px;color:rgba(0,0,0,.88);line-height:1.4;margin-bottom:2px}
+.vi .vm{font-size:11px;color:rgba(0,0,0,.4)}
 
-/* Video cards */
-.video-subsection { padding:0 16px 16px; }
-.video-row { display:flex; gap:8px; }
-.video-card { flex:1; }
-.video-thumb {
-  height:99px; border-radius:8px; background:#eee; position:relative; overflow:hidden;
-}
-.video-dur {
-  position:absolute; bottom:4px; right:4px;
-  background:rgba(0,0,0,0.7); color:#fff; font-size:10px; padding:1px 4px; border-radius:2px;
-}
-.video-info { padding:8px 0; }
-.video-info .v-t { font-size:13px; color:rgba(0,0,0,0.88); line-height:1.4; margin-bottom:2px; }
-.video-info .v-m { font-size:11px; color:rgba(0,0,0,0.4); }
+/* News tabs */
+.nt{display:flex;gap:16px;padding:0 16px 8px}
+.nt button{font-size:14px;color:rgba(0,0,0,.45);cursor:pointer;padding:2px 4px;background:none;border:none}
+.nt button.on{color:rgba(0,0,0,.88);font-weight:500}
 
-/* Feat book */
-.feat-book { display:flex; gap:16px; padding:0 16px 16px; }
-.feat-cover { width:103px; height:145px; border-radius:8px; background:#eee; flex-shrink:0; }
-.feat-info { display:flex; flex-direction:column; gap:6px; padding:8px 0; flex:1; }
-.feat-info .f-title { font-size:16px; font-weight:500; color:rgba(0,0,0,0.88); }
-.feat-info .f-desc { font-size:12px; color:rgba(0,0,0,0.45); line-height:1.5; }
-.feat-info .f-meta { font-size:12px; color:rgba(0,0,0,0.6); }
-.feat-info .f-score { color:#e74c3c; }
+/* News list */
+.nl{padding:0 16px}
+.ni{padding:16px 0;border-top:1px solid #f0f0f0}
+.ni:first-child{border-top:none}
+.ni h4{font-size:14px;color:rgba(0,0,0,.88);line-height:1.5;margin-bottom:8px}
+.nimg{display:flex;gap:4px;margin-bottom:8px}
+.nimg .nm{width:117px;height:88px;border-radius:6px;background:#eee}
+.nmeta{font-size:11px;color:rgba(0,0,0,.4)}
+.nside{display:flex;gap:12px}
+.nside .nsx{flex:1}
+.nside .nsi{width:114px;height:86px;border-radius:6px;background:#eee;flex-shrink:0}
 
-/* Book grid 4-up */
-.book-grid { display:flex; gap:8px; padding:0 16px 16px; }
-.book-item { flex:1; }
-.book-cover { width:100%; aspect-ratio:0.71; border-radius:6px; background:#eee; margin-bottom:8px; }
-.book-item .b-title { font-size:12px; color:rgba(0,0,0,0.88); margin-bottom:2px; }
-.book-item .b-author { font-size:11px; color:rgba(0,0,0,0.4); }
+/* Books */
+.fb{display:flex;gap:16px;padding:0 16px 16px}
+.fbc{width:103px;height:145px;border-radius:8px;background:#eee;flex-shrink:0}
+.fbi{display:flex;flex-direction:column;gap:6px;padding:8px 0;flex:1}
+.fbi .ft{font-size:16px;font-weight:500;color:rgba(0,0,0,.88)}
+.fbi .fd{font-size:12px;color:rgba(0,0,0,.45);line-height:1.5}
+.fbi .fm{font-size:12px;color:rgba(0,0,0,.6)}
+.fbi .fs{color:#e74c3c}
+
+.bg4{display:flex;gap:8px;padding:0 16px 16px}
+.bi{flex:1}
+.bi .bc{width:100%;aspect-ratio:.71;border-radius:6px;background:#eee;margin-bottom:8px}
+.bi .bt{font-size:12px;color:rgba(0,0,0,.88);margin-bottom:2px}
+.bi .ba{font-size:11px;color:rgba(0,0,0,.4)}
 
 /* System bar */
-.sys-bar { height:20px; display:flex; align-items:center; justify-content:center; margin-top:auto; padding-bottom:12px; }
-.sys-handle { width:94px; height:4px; background:rgba(0,0,0,0.2); border-radius:2px; }
+.sy{height:20px;display:flex;align-items:center;justify-content:center;padding:12px 0}
+.sy .sh{width:94px;height:4px;background:rgba(0,0,0,.2);border-radius:2px}
 
-.divider { height:0.5px; background:#f0f0f0; margin:0 16px; }
+.dv{height:.5px;background:#f0f0f0;margin:0 16px}
+
+/* SVG icon helpers */
+svg.icon24{width:24px;height:24px}
 </style>
 </head>
 <body>
 <div class="pad">
 
-  <!-- ══ Status bar ══ -->
-  <div class="status-bar">
+  <!-- Status bar -->
+  <div class="sb">
     <span>9:30</span>
-    <div class="status-icons">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12.55a11 11 0 0 1 14.08 0" stroke="rgba(0,0,0,0.88)" stroke-width="2" stroke-linecap="round"/></svg>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="rgba(0,0,0,0.88)"><rect x="2" y="16" width="3" height="6" rx="1"/><rect x="7" y="12" width="3" height="10" rx="1"/><rect x="12" y="8" width="3" height="14" rx="1"/><rect x="17" y="4" width="3" height="18" rx="1"/></svg>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="18" height="11" rx="2" stroke="rgba(0,0,0,0.88)" stroke-width="1.5"/><path d="M20 10v5" stroke="rgba(0,0,0,0.88)" stroke-width="2"/><rect x="4" y="9" width="12" height="7" rx="1" fill="rgba(0,0,0,0.88)"/></svg>
+    <div class="sb-i">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12.55a11 11 0 0 1 14.08 0" stroke="rgba(0,0,0,.88)" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="rgba(0,0,0,.88)"><rect x="2" y="16" width="3" height="6" rx="1"/><rect x="7" y="12" width="3" height="10" rx="1"/><rect x="12" y="8" width="3" height="14" rx="1"/><rect x="17" y="4" width="3" height="18" rx="1"/></svg>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="18" height="11" rx="2" stroke="rgba(0,0,0,.88)" stroke-width="1.5"/><path d="M20 10v5" stroke="rgba(0,0,0,.88)" stroke-width="2"/><rect x="4" y="9" width="12" height="7" rx="1" fill="rgba(0,0,0,.88)"/></svg>
     </div>
   </div>
 
-  <!-- ══ Tab bar ══ -->
-  <div class="tab-bar">
-    <div class="tab active">
-      <span>新标签页</span>
-      <span class="tab-close">&times;</span>
-    </div>
-    <div class="tab">
-      <span>哔哩哔哩 bilibili…</span>
-      <span class="tab-close">&times;</span>
-    </div>
-    <div class="tab">
-      <span>哔哩哔哩 bilibili…</span>
-      <span class="tab-close">&times;</span>
-    </div>
-    <div class="tab-new">+</div>
+  <!-- Tab bar -->
+  <div class="tabs">
+    <div class="tab on"><div class="td g1"></div><span class="tx">新标签页</span><span class="tc">&times;</span></div>
+    <div class="tab"><div class="td g1"></div><span class="tx">哔哩哔哩 bilibili…</span><span class="tc">&times;</span></div>
+    <div class="tab"><div class="td g1"></div><span class="tx">哔哩哔哩 bilibili…</span><span class="tc">&times;</span></div>
+    <div class="tab"><div class="td g1"></div><span class="tx">哔哩哔哩 bilibili…</span><span class="tc">&times;</span></div>
+    <div class="tab-add">+</div>
   </div>
 
-  <!-- ══ Address bar ══ -->
-  <div class="addr-bar">
+  <!-- Address bar -->
+  <div class="addr">
     <div class="nav-btns">
-      <div class="nav-btn enabled"><img src="preview-assets/pad_back.png" alt=""></div>
-      <div class="nav-btn enabled"><img src="preview-assets/pad_forward.png" alt=""></div>
-      <div class="nav-btn enabled"><img src="preview-assets/pad_refresh.png" alt=""></div>
-      <div class="nav-btn enabled"><img src="preview-assets/pad_home.png" alt=""></div>
-      <div class="nav-btn enabled"><img src="preview-assets/pad_ua_switch.png" alt=""></div>
+      <div class="nav-b on"><img src="preview-assets/pad_back.png" alt=""></div>
+      <div class="nav-b on"><img src="preview-assets/pad_forward.png" alt=""></div>
+      <div class="nav-b on"><img src="preview-assets/pad_refresh.png" alt=""></div>
+      <div class="nav-b on"><img src="preview-assets/pad_home.png" alt=""></div>
+      <div class="nav-b on"><img src="preview-assets/pad_ua_switch.png" alt=""></div>
     </div>
-    <div class="addr-input">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" opacity="0.3"><circle cx="11" cy="11" r="7" stroke="rgba(0,0,0,0.88)" stroke-width="2"/><path d="M20 20l-3-3" stroke="rgba(0,0,0,0.88)" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="addr-in">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" opacity=".3"><circle cx="11" cy="11" r="7" stroke="rgba(0,0,0,.88)" stroke-width="2"/><path d="M20 20l-3-3" stroke="rgba(0,0,0,.88)" stroke-width="2" stroke-linecap="round"/></svg>
       <span>搜索或输入网址</span>
     </div>
-    <div class="addr-actions">
-      <div class="addr-action"><img src="preview-assets/pad_ai_logo.png" alt=""></div>
-      <div class="addr-action"><img src="preview-assets/search_camera.png" alt=""></div>
-      <div class="addr-action"><img src="preview-assets/search_microphone.png" alt=""></div>
+    <div class="addr-act">
+      <!-- star/bookmark -->
+      <div class="addr-a"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18 21.5 12 18 6 21.5 7 14.5 2 9.5 9 8.5" stroke="rgba(0,0,0,.88)" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+      <!-- camera -->
+      <div class="addr-a"><img src="preview-assets/search_camera.png" alt=""></div>
+      <!-- voice -->
+      <div class="addr-a"><img src="preview-assets/search_microphone.png" alt=""></div>
     </div>
-    <div class="addr-right">
-      <div class="addr-right-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="rgba(0,0,0,0.88)" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="addr-right-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="rgba(0,0,0,0.88)" stroke-width="1.5"/><path d="M8 2v4M16 2v4M4 10h16" stroke="rgba(0,0,0,0.88)" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="addr-right-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="rgba(0,0,0,0.88)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="addr-right-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><line x1="5" y1="6" x2="19" y2="6" stroke="rgba(0,0,0,0.88)" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="rgba(0,0,0,0.88)" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="18" x2="19" y2="18" stroke="rgba(0,0,0,0.88)" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
+    <!-- Right toolbar -->
+    <div class="addr-r">
+      <div class="ai"><img src="preview-assets/pad_ai_logo.png" alt=""></div>
+      <div class="ai"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="rgba(0,0,0,.88)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="ai"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="rgba(0,0,0,.88)" stroke-width="1.5"/><path d="M8 2v4M16 2v4M4 10h16" stroke="rgba(0,0,0,.88)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="ai"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="rgba(0,0,0,.88)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ai"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><line x1="5" y1="6" x2="19" y2="6" stroke="rgba(0,0,0,.88)" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="rgba(0,0,0,.88)" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="18" x2="19" y2="18" stroke="rgba(0,0,0,.88)" stroke-width="2" stroke-linecap="round"/></svg></div>
     </div>
   </div>
 
-  <div class="chrome-divider"></div>
+  <div class="cd"></div>
 
-  <!-- ══ Main content ══ -->
-  <div class="content">
-    <div class="content-inner">
+  <!-- Content -->
+  <div class="ct">
 
-      <!-- Logo -->
-      <div class="logo"><img src="preview-assets/brand_logo.png" alt=""></div>
+    <!-- Logo 80dp -->
+    <div class="logo"><img src="preview-assets/brand_logo.png" alt=""></div>
 
-      <!-- Search card -->
-      <div class="search-card">
-        <div class="search-input">输入关键信息</div>
-        <div class="search-toolbar">
-          <div class="toolbar-left">
-            <div class="mode-tab">
-              <div class="active">搜全网</div>
-              <div class="inactive">AI搜索</div>
-            </div>
-            <div class="model-switch">
-              <img src="preview-assets/pad_ai_logo.png" alt=""> 豆包 &#9662;
-            </div>
-          </div>
-          <div class="spacer"></div>
-          <div class="toolbar-actions">
-            <div class="act"><img src="preview-assets/search_camera.png" alt=""></div>
-            <div class="act"><img src="preview-assets/search_microphone.png" alt=""></div>
-          </div>
+    <!-- Search card 760dp -->
+    <div class="sc">
+      <div class="sc-i">输入关键信息</div>
+      <div class="sc-tb">
+        <div class="tl">
+          <div class="mode"><div class="on">搜全网</div><div class="off">AI搜索</div></div>
+          <div class="ms"><img src="preview-assets/pad_ai_logo.png" alt=""> 豆包 &#9662;</div>
+        </div>
+        <div class="spr"></div>
+        <div class="acts">
+          <div class="act"><img src="preview-assets/search_camera.png" alt=""></div>
+          <div class="act"><img src="preview-assets/search_microphone.png" alt=""></div>
         </div>
       </div>
+    </div>
 
-      <!-- Shortcuts -->
-      <div class="shortcuts">
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_bookmarks.png" alt=""></div><div class="s-label">书签</div></div>
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_history.png" alt=""></div><div class="s-label">历史记录</div></div>
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_curated.png" alt=""></div><div class="s-label">网址精选</div></div>
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_games.png" alt=""></div><div class="s-label">小游戏</div></div>
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_weibo.png" alt=""></div><div class="s-label">微博</div></div>
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_novel.png" alt=""></div><div class="s-label">免费小说</div></div>
-        <div class="shortcut-item"><div class="s-icon"><img src="preview-assets/shortcut_baidu.png" alt=""></div><div class="s-label">百度</div></div>
-      </div>
+    <!-- Shortcuts: 7 items × 72.57dp, gap 42dp -->
+    <div class="sh">
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_bookmarks.png" alt=""></div><div class="sh-lb">书签</div></div>
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_history.png" alt=""></div><div class="sh-lb">历史记录</div></div>
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_curated.png" alt=""></div><div class="sh-lb">网址精选</div></div>
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_games.png" alt=""></div><div class="sh-lb">小游戏</div></div>
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_weibo.png" alt=""></div><div class="sh-lb">微博</div></div>
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_novel.png" alt=""></div><div class="sh-lb">免费小说</div></div>
+      <div class="sh-it"><div class="sh-ic"><img src="preview-assets/pad_shortcut_baidu.png" alt=""></div><div class="sh-lb">百度</div></div>
+    </div>
 
-      <!-- Switch button -->
-      <div class="switch-area">
-        <button class="switch-btn">切换极简版</button>
-      </div>
+    <!-- Switch button -->
+    <div class="sw"><span>切换极简版</span></div>
 
-    </div><!-- /content-inner -->
-
-    <!-- ══ Two columns ══ -->
-    <div class="two-col">
-
+    <!-- Two-column grid -->
+    <div class="grid">
       <!-- LEFT COLUMN -->
       <div class="col">
-        <!-- Utility cards -->
-        <div class="section">
-          <div class="section-hd"><h3>实用工具</h3><button class="more">更多 &#9662;</button></div>
-          <div class="util-grid">
-            <div class="util-card purple"><div class="u-title">工具卡片 1</div></div>
-            <div class="util-card pink"><div class="u-title">工具卡片 2</div></div>
-          </div>
-          <!-- Videos -->
-          <div class="video-subsection">
-            <div class="video-row">
-              <div class="video-card">
-                <div class="video-thumb"><div class="video-dur">08:45</div></div>
-                <div class="video-info"><div class="v-t">中国奇迹背后的创新力量·第二季</div><div class="v-m">科技 · 856万次观看</div></div>
-              </div>
-              <div class="video-card">
-                <div class="video-thumb"><div class="video-dur">08:45</div></div>
-                <div class="video-info"><div class="v-t">治愈系风景: 云海日出</div><div class="v-m">旅行 · 672万次观看</div></div>
-              </div>
+        <!-- 实用工具 + 视频 (91:5538 + 91:5567) -->
+        <div class="sec">
+          <div class="sechd"><h3>实用工具</h3><button class="mr">更多 &#9662;</button></div>
+          <div class="uc"><div class="card pu"><div class="ctt">工具卡片 1</div></div><div class="card pk"><div class="ctt">工具卡片 2</div></div></div>
+          <div class="vs">
+            <div class="vr">
+              <div class="vc"><div class="vth"><div class="vd">08:45</div></div><div class="vi"><div class="vt">中国奇迹背后的创新力量·第二季</div><div class="vm">科技 · 856万次观看</div></div></div>
+              <div class="vc"><div class="vth"><div class="vd">08:45</div></div><div class="vi"><div class="vt">治愈系风景: 云海日出</div><div class="vm">旅行 · 672万次观看</div></div></div>
             </div>
-            <div class="video-row" style="margin-top:8px">
-              <div class="video-card">
-                <div class="video-thumb"><div class="video-dur">08:45</div></div>
-                <div class="video-info"><div class="v-t">未来城市的绿色革命</div><div class="v-m">环境 · 734万次观看</div></div>
-              </div>
-              <div class="video-card" style="visibility:hidden;"></div>
+            <div class="vr" style="margin-top:8px">
+              <div class="vc"><div class="vth"><div class="vd">08:45</div></div><div class="vi"><div class="vt">未来城市的绿色革命</div><div class="vm">环境 · 734万次观看</div></div></div>
+              <div class="vc" style="visibility:hidden"></div>
             </div>
           </div>
         </div>
 
-        <!-- News -->
-        <div class="section">
-          <div class="news-tabs">
-            <button class="news-tab active">推荐</button>
-            <button class="news-tab">国内</button>
-            <button class="news-tab">国际</button>
-            <button class="news-tab">科技</button>
-            <button class="news-tab">财经</button>
+        <!-- 新闻 (91:5639) -->
+        <div class="sec">
+          <div class="nt">
+            <button class="on">推荐</button><button>国内</button><button>国际</button><button>科技</button><button>财经</button>
           </div>
-          <div class="news-list">
-            <div class="news-item">
+          <div class="nl">
+            <div class="ni">
               <h4>我国首条跨海高铁全线贯通运营</h4>
-              <div class="news-imgs"><div class="ni"></div><div class="ni"></div><div class="ni"></div></div>
-              <div class="news-meta">2小时前 · 12.5万阅读</div>
+              <div class="nimg"><div class="nm"></div><div class="nm"></div><div class="nm"></div></div>
+              <div class="nmeta">2小时前 · 12.5万阅读</div>
             </div>
-            <div class="divider"></div>
-            <div class="news-item">
+            <div class="dv"></div>
+            <div class="ni">
               <h4>我国首条跨海高铁全线贯通运营</h4>
-              <div class="news-imgs"><div class="ni" style="width:360px;height:200px"></div></div>
-              <div class="news-meta">2小时前 · 12.5万阅读</div>
+              <div class="nimg"><div class="nm" style="width:360px;height:200px"></div></div>
+              <div class="nmeta">2小时前 · 12.5万阅读</div>
             </div>
-            <div class="divider"></div>
-            <div class="news-item">
+            <div class="dv"></div>
+            <div class="ni">
               <h4>长三角一体化发展迈出新步伐</h4>
-              <div class="news-meta">3小时前 · 9.8万阅读</div>
+              <div class="nmeta">3小时前 · 9.8万阅读</div>
             </div>
-            <div class="divider"></div>
-            <div class="news-item">
-              <div class="news-side">
-                <div class="ns-text">
-                  <h4>长三角一体化发展迈出新步伐</h4>
-                  <div class="news-meta">4小时前 · 15万阅读</div>
-                </div>
-                <div class="ns-img"></div>
+            <div class="dv"></div>
+            <div class="ni">
+              <div class="nside">
+                <div class="nsx"><h4>长三角一体化发展迈出新步伐</h4><div class="nmeta">4小时前 · 15万阅读</div></div>
+                <div class="nsi"></div>
               </div>
             </div>
           </div>
@@ -391,50 +294,41 @@ body {
 
       <!-- RIGHT COLUMN -->
       <div class="col">
-        <!-- Utility cards -->
-        <div class="section">
-          <div class="section-hd"><h3>实用工具</h3><button class="more">更多 &#9662;</button></div>
-          <div class="util-grid">
-            <div class="util-card peach"><div class="u-title">工具卡片 3</div></div>
-            <div class="util-card warm"><div class="u-title">工具卡片 4</div></div>
-          </div>
+        <!-- 实用工具 (91:5610) -->
+        <div class="sec">
+          <div class="sechd"><h3>实用工具</h3><button class="mr">更多 &#9662;</button></div>
+          <div class="uc"><div class="card pe"><div class="ctt">工具卡片 3</div></div><div class="card wa"><div class="ctt">工具卡片 4</div></div></div>
         </div>
 
-        <!-- Books -->
-        <div class="section">
-          <div class="section-hd"><h3>小说</h3><button class="more">更多 &#9662;</button></div>
-          <div class="feat-book">
-            <div class="feat-cover"></div>
-            <div class="feat-info">
-              <div class="f-title">山河岁月</div>
-              <div class="f-desc">这是一段关于山河与岁月的传奇故事，带你领略不一样的江湖</div>
-              <div class="f-meta"><span class="f-score">9.8分</span> · 蝴蝶蓝</div>
+        <!-- 小说 (91:5687) -->
+        <div class="sec">
+          <div class="sechd"><h3>小说</h3><button class="mr">更多 &#9662;</button></div>
+          <div class="fb">
+            <div class="fbc"></div>
+            <div class="fbi">
+              <div class="ft">山河岁月</div>
+              <div class="fd">这是一段关于山河与岁月的传奇故事，带你领略不一样的江湖</div>
+              <div class="fm"><span class="fs">9.8分</span> · 蝴蝶蓝</div>
             </div>
           </div>
-          <div class="book-grid">
-            <div class="book-item"><div class="book-cover"></div><div class="b-title">天意</div><div class="b-author">花福蝶</div></div>
-            <div class="book-item"><div class="book-cover"></div><div class="b-title">全职高手</div><div class="b-author">可可豆</div></div>
-            <div class="book-item"><div class="book-cover"></div><div class="b-title">山河岁月</div><div class="b-author">蝴蝶蓝</div></div>
-            <div class="book-item"><div class="book-cover"></div><div class="b-title">天意</div><div class="b-author">花福蝶</div></div>
+          <div class="bg4">
+            <div class="bi"><div class="bc"></div><div class="bt">天意</div><div class="ba">花福蝶</div></div>
+            <div class="bi"><div class="bc"></div><div class="bt">全职高手</div><div class="ba">可可豆</div></div>
+            <div class="bi"><div class="bc"></div><div class="bt">山河岁月</div><div class="ba">蝴蝶蓝</div></div>
+            <div class="bi"><div class="bc"></div><div class="bt">天意</div><div class="ba">花福蝶</div></div>
           </div>
         </div>
 
-        <!-- More utility -->
-        <div class="section">
-          <div class="section-hd"><h3>实用工具</h3><button class="more">更多 &#9662;</button></div>
-          <div class="util-grid">
-            <div class="util-card purple"><div class="u-title">工具卡片 5</div></div>
-            <div class="util-card pink"><div class="u-title">工具卡片 6</div></div>
-          </div>
+        <!-- 更多实用工具 -->
+        <div class="sec">
+          <div class="sechd"><h3>实用工具</h3><button class="mr">更多 &#9662;</button></div>
+          <div class="uc"><div class="card pu"><div class="ctt">工具卡片 5</div></div><div class="card pk"><div class="ctt">工具卡片 6</div></div></div>
         </div>
       </div>
+    </div>
 
-    </div><!-- /two-col -->
-
-    <!-- System bar -->
-    <div class="sys-bar"><div class="sys-handle"></div></div>
-
-  </div><!-- /content -->
+    <div class="sy"><div class="sh"></div></div>
+  </div>
 
 </div>
 </body>
