@@ -260,13 +260,13 @@
       <img src="preview-assets/brand_logo.png" alt="">
     </div>
 
-    <!-- Search card — 点击跳转到对应搜索输入态 -->
+    <!-- Search card — 根据当前激活tab决定跳转目标 -->
     <div class="search-card" style="cursor:pointer">
-      <div class="search-input" onclick="window.location='search-ai-preview.html'">输入关键信息</div>
+      <div class="search-input" id="searchInput" onclick="goSearch()">输入关键信息</div>
       <div class="toolbar">
-        <div class="mode-tab">
-          <div class="tab-active" onclick="window.location='search-web-preview.html'; event.stopPropagation()">搜全网</div>
-          <div class="tab-inactive" onclick="window.location='search-ai-preview.html'; event.stopPropagation()">AI搜索</div>
+        <div class="mode-tab" id="modeTab">
+          <div id="tabWeb" class="tab-active" onclick="switchTab('web'); event.stopPropagation()">搜全网</div>
+          <div id="tabAI" class="tab-inactive" onclick="switchTab('ai'); event.stopPropagation()">AI搜索</div>
         </div>
         <div class="spacer"></div>
         <div class="action-icons">
@@ -438,5 +438,30 @@
   </div>
 
 </div>
+
+<script>
+var activeTab = 'web'; // 默认搜全网
+
+function switchTab(mode) {
+  activeTab = mode;
+  var tabWeb = document.getElementById('tabWeb');
+  var tabAI = document.getElementById('tabAI');
+  if (mode === 'web') {
+    tabWeb.className = 'tab-active';
+    tabAI.className = 'tab-inactive';
+  } else {
+    tabWeb.className = 'tab-inactive';
+    tabAI.className = 'tab-active';
+  }
+}
+
+function goSearch() {
+  if (activeTab === 'ai') {
+    window.location = 'search-ai-preview.html';
+  } else {
+    window.location = 'search-web-preview.html';
+  }
+}
+</script>
 </body>
 </html>
