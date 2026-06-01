@@ -26,6 +26,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:clipToPadding="false">
 
         <LinearLayout
@@ -35,26 +36,74 @@
             android:gravity="center_horizontal"
             android:paddingBottom="60dp">
 
-            <!-- ─── Logo — 64×64dp, 167dp from canvas top ──────────────── -->
-            <ImageView
-                android:id="@+id/brand_logo"
-                android:layout_width="@dimen/logo_size"
-                android:layout_height="@dimen/logo_size"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/logo_margin_top"
-                android:src="@drawable/brand_logo"
-                android:contentDescription="@null" />
+            <!-- ─── Header bar — 40dp, tab manager right-aligned ─── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingEnd="17dp"
+                android:clipChildren="false">
 
-            <!-- ─── Search card — 380dp wide (16dp margin each side) ───── -->
+                <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/tab_manager_btn"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:clipChildren="false">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_tab_manager_button" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/tab_count"
+                        android:textColor="@color/text_primary"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <!-- ─── Logo — offset 20% above center (3:7 ratio) ─── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="3" />
+
+                <ImageView
+                    android:id="@+id/brand_logo"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size"
+                    android:src="@drawable/brand_logo"
+                    android:contentDescription="@null" />
+
+                <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="7" />
+            </LinearLayout>
+
+            <!-- ─── Search card — 380dp wide, MaterialCardView shadow (color not tunable) ─── -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/search_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginTop="@dimen/search_card_margin_top"
+                android:layout_marginBottom="4dp"
                 app:cardCornerRadius="@dimen/radius_card"
-                app:cardElevation="@dimen/search_card_elevation"
+                app:cardElevation="6dp"
+                android:outlineSpotShadowColor="#60000000"
+                android:outlineAmbientShadowColor="#50000000"
                 app:cardBackgroundColor="@color/surface_raised"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/border_strong">
@@ -145,20 +194,17 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ─── Site grid — 5 columns × 3 rows ──────────────────────── -->
-            <!--
-                Row 1: 书签 / 历史记录 / 免费小说 / 短剧 / 小游戏
-                Row 2: 网址精选 / 微博 / 百度 / 爱奇艺 / 优酷
-                Row 3: 知乎 / 京东 / 添加(+) / [empty] / [empty]
-            -->
+            <!-- ─── Site grid — fills remaining space, fixed 12dp top gap ─── -->
             <LinearLayout
                 android:id="@+id/site_grid"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1.4"
+                android:layout_marginTop="24dp"
                 android:layout_marginStart="@dimen/grid_margin_horizontal"
                 android:layout_marginEnd="@dimen/grid_margin_horizontal"
-                android:layout_marginTop="@dimen/grid_margin_top"
                 android:orientation="vertical"
+                android:paddingHorizontal="8dp"
                 android:gravity="center_horizontal">
 
                 <!-- ── Row 1: 书签 历史记录 免费小说 短剧 小游戏 ──────── -->
@@ -166,59 +212,65 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
                     android:layout_marginBottom="12dp">
 
-                    <!-- 书签 -->
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_bookmarks" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_bookmarks"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_bookmarks"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 历史记录 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_history" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_history"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_history"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 免费小说 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_novel" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_novel"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_novel"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 短剧 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_drama" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_drama"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_drama"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 小游戏 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_games" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_games"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_games"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <!-- ── Row 2: 网址精选 爱奇艺 微博 优酷 百度 ──────────── -->
@@ -226,102 +278,114 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
                     android:layout_marginBottom="12dp">
 
-                    <!-- 网址精选 -->
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_curated" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_curated"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_curated"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 爱奇艺 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_iqiyi" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_iqiyi"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_iqiyi"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 微博 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_weibo" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_weibo"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_weibo"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 优酷 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_youku" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_youku"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_youku"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 百度 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_baidu" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_baidu"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_baidu"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
-
                 </LinearLayout>
 
-                <!-- ── Row 3: 知乎 京东 添加(+) [empty×2] ────────────── -->
+                <!-- ── Row 3: 知乎 京东 添加(+) ──────────────────────── -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+                    android:orientation="horizontal">
 
-                    <!-- 知乎 -->
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_zhihu" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_zhihu"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_zhihu"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 京东 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_jd" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_jd"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_jd"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 添加 -->
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:paddingVertical="8dp" android:gravity="center_horizontal">
                         <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
                             android:src="@drawable/shortcut_add" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_add"
+                            android:layout_marginTop="10dp" android:text="@string/shortcut_add"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- Empty slots -->
-                    <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
-                    <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+                    <!-- empty slots for column alignment -->
+                    <Space android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" />
 
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+
+                    <Space android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -330,35 +394,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Tab manager button — top-right, 28×28dp, Figma 571:44949
-         ═══════════════════════════════════════════════════════════════════ -->
-    <FrameLayout
-        android:id="@+id/tab_manager_btn"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_gravity="top|end"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="17dp"
-
-        android:clipChildren="false">
-
-        <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/ic_tab_manager_button" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/tab_count"
-            android:textColor="@color/text_primary"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:gravity="center" />
-
-    </FrameLayout>
 
     <!-- ═══════════════════════════════════════════════════════════════════════
          Bottom area — nav + system bar
@@ -370,70 +405,88 @@
         android:orientation="vertical"
         android:background="@color/surface_canvas">
 
-        <!-- Bottom navigation bar — 5 tabs with icon + label, 60dp -->
+        <!-- Bottom navigation bar — 5 tabs, 28dp each, distributed -->
         <LinearLayout
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_nav_height"
             android:orientation="horizontal"
-            android:paddingStart="@dimen/bottom_nav_padding_horizontal"
-            android:paddingEnd="@dimen/bottom_nav_padding_horizontal"
-            android:paddingTop="@dimen/bottom_nav_padding_top"
-            android:gravity="center_vertical">
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
-            <!-- 主页 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
-                android:layout_weight="1" android:orientation="vertical"
-                android:gravity="center" android:padding="2dp">
+            <!-- 主页 (28×28 icon + label) -->
+            <LinearLayout
+                android:layout_width="28dp" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal"
+                android:layout_gravity="center_vertical">
                 <ImageView android:layout_width="28dp" android:layout_height="28dp"
                     android:src="@drawable/nav_home" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/nav_home" android:textColor="@color/text_primary"
-                    android:textSize="10sp" android:gravity="center" />
+                    android:layout_marginTop="2dp"
+                    android:textSize="10sp" android:textColor="@color/text_primary"
+                    android:text="@string/nav_home" />
             </LinearLayout>
 
+            <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
             <!-- 推荐 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
-                android:layout_weight="1" android:orientation="vertical"
-                android:gravity="center" android:padding="2dp">
+            <LinearLayout
+                android:layout_width="28dp" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal"
+                android:layout_gravity="center_vertical">
                 <ImageView android:layout_width="28dp" android:layout_height="28dp"
                     android:src="@drawable/nav_recommend" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/nav_recommend" android:textColor="@color/text_primary"
-                    android:textSize="10sp" android:gravity="center" />
+                    android:layout_marginTop="2dp"
+                    android:textSize="10sp" android:textColor="@color/text_primary"
+                    android:text="@string/nav_recommend" />
             </LinearLayout>
 
+            <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
             <!-- 视频 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
-                android:layout_weight="1" android:orientation="vertical"
-                android:gravity="center" android:padding="2dp">
+            <LinearLayout
+                android:layout_width="28dp" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal"
+                android:layout_gravity="center_vertical">
                 <ImageView android:layout_width="28dp" android:layout_height="28dp"
                     android:src="@drawable/nav_video" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/nav_video" android:textColor="@color/text_primary"
-                    android:textSize="10sp" android:gravity="center" />
+                    android:layout_marginTop="2dp"
+                    android:textSize="10sp" android:textColor="@color/text_primary"
+                    android:text="@string/nav_video" />
             </LinearLayout>
 
+            <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
             <!-- 小说 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
-                android:layout_weight="1" android:orientation="vertical"
-                android:gravity="center" android:padding="2dp">
+            <LinearLayout
+                android:layout_width="28dp" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal"
+                android:layout_gravity="center_vertical">
                 <ImageView android:layout_width="28dp" android:layout_height="28dp"
                     android:src="@drawable/nav_novel" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/nav_novel" android:textColor="@color/text_primary"
-                    android:textSize="10sp" android:gravity="center" />
+                    android:layout_marginTop="2dp"
+                    android:textSize="10sp" android:textColor="@color/text_primary"
+                    android:text="@string/nav_novel" />
             </LinearLayout>
 
+            <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
             <!-- 菜单 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
-                android:layout_weight="1" android:orientation="vertical"
-                android:gravity="center" android:padding="2dp">
+            <LinearLayout
+                android:layout_width="28dp" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal"
+                android:layout_gravity="center_vertical">
                 <ImageView android:layout_width="28dp" android:layout_height="28dp"
                     android:src="@drawable/nav_menu" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/nav_menu" android:textColor="@color/text_primary"
-                    android:textSize="10sp" android:gravity="center" />
+                    android:layout_marginTop="2dp"
+                    android:textSize="10sp" android:textColor="@color/text_primary"
+                    android:text="@string/nav_menu" />
             </LinearLayout>
 
         </LinearLayout>

@@ -16,10 +16,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Only push bottom up for gesture bar, don't touch other sides
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
-            val navBottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
-            view.updatePadding(bottom = navBottom)
+            val statusBar = insets.getInsets(WindowInsetsCompat.Type.statusBars())
+            val navBar = insets.getInsets(WindowInsetsCompat.Type.navigationBars())
+            view.updatePadding(
+                top = statusBar.top,
+                bottom = navBar.bottom
+            )
             insets
         }
     }
