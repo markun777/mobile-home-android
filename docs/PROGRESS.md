@@ -50,7 +50,7 @@ Last updated: `2026-06-01`
 | Shortcut label audit vs Figma 85:3451 | ✅ done | 4 labels corrected: 历史→历史记录, 精选→网址精选, 游戏→小游戏, 小说→免费小说 |
 | `strings.xml` updated | ✅ done | All 12 shortcut labels now match Figma node text |
 | `xml-preview.html` updated | ✅ done | Labels synced with strings.xml |
-| HTML preview screenshot | ✅ done | `docs/xml-preview-screenshot.png` — all 12 tiles render correctly |
+| HTML preview screenshot | ✅ done | `android-vm/preview/xml-preview-screenshot.png` — all 12 tiles render correctly |
 
 ## Completed — Build And Emulator Verification ✅
 
@@ -62,7 +62,7 @@ Last updated: `2026-06-01`
 | APK output | ✅ done | `app/build/outputs/apk/debug/app-debug.apk` generated locally |
 | Emulator install/render | ✅ done | Installed and launched `com.lenovo.mobilehome/.MainActivity` on `MobileHomePhone_API35` |
 | Device profile | ✅ done | `1080 x 2340`, density `440` |
-| Screenshot evidence | ✅ done | `docs/android-emulator-phone-default.png` |
+| Screenshot evidence | ✅ done | `android-vm/screenshots/android-emulator-phone-default.png` |
 
 ## Completed — Phase 5 (Figma 571:44695 Update) ✅
 
@@ -92,18 +92,17 @@ Last updated: `2026-06-01`
 | Native build | ✅ done | `./gradlew --no-daemon --console=plain assembleDebug` passes |
 | Resource fix | ✅ done | Replaced invalid SVG/`<line>` drawables with Android `vector` resources |
 | Emulator install/render | ✅ done | APK installed and `com.lenovo.mobilehome/.MainActivity` launched |
-| Screenshot evidence | ✅ done | `docs/android-emulator-phone-57144695.png` |
+| Screenshot evidence | ✅ done | `android-vm/screenshots/android-emulator-phone-57144695.png` |
 
 ## Board Status
 
 | Board | Node | Expo Preview | Formal XML Delivery |
 |---|---|---|---|
 | Phone home default | `571:44695` | reference exists | ✅ **updated, built, emulator verified** |
-| Phone Ask AI | `91:4404` | reference exists | ✅ **initial XML layout, build passes, emulator verify pending** |
-| Pad home default | `91:5128` | deferred | independent composition pending |
+| Phone Ask AI | `571:46559` | reference exists | ✅ **layout in progress (edge-to-edge + insets), build passes** |
 | Pad home default | `91:5128` | deferred | independent composition pending |
 
-## Migration Sequence Remaining
+## Migration Sequence
 
 1. Visual review against Figma `571:44695` — record any pixel/geometry drift.
 2. Begin Ask AI or Pad only after Phone XML visual review accepted.

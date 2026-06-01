@@ -51,7 +51,7 @@ Verified device profile:
 
 - Size: `1080x2340`
 - Density: `440`
-- Screenshot: `docs/android-emulator-phone-57144695.png`
+- Screenshot: `android-vm/screenshots/android-emulator-phone-57144695.png`
 
 ## Notes
 

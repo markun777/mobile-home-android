@@ -22,7 +22,7 @@ Confirmed on `2026-05-27`:
   SDK at `/Users/markun/Library/Android/sdk`.
 - The debug APK has been installed and rendered on
   `MobileHomePhone_API35` (`1080 x 2340`, density `440`); evidence is recorded
-  in `docs/android-emulator-phone-57144695.png`.
+  in `android-vm/screenshots/android-emulator-phone-57144695.png`.
 - Pad remains a separately composed surface from node `91:5128`; it is not a
   scaled Phone layout.
 - The current Expo files remain at repository root until the migration step
@@ -43,7 +43,7 @@ The local verification emulator is `MobileHomePhone_API35`, stored under
 `/Users/markun/Library/Android/avd`. It uses Android API 35 Google APIs
 `arm64-v8a`, `1080 x 2340`, density `440`.
 
-For more local setup detail, see `docs/ANDROID_LOCAL_TOOLCHAIN.md`.
+For more local setup detail, see `android-vm/docs/ANDROID_LOCAL_TOOLCHAIN.md`.
 
 ## Target Repository Shape
 

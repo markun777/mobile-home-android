@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Model selector / toggle chip: rounded 8dp, subtle border -->
+<!-- Query suggestion chip: rounded 12dp, 0.5px border, transparent bg -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <corners android:radius="8dp" />
+    <corners android:radius="12dp" />
     <solid android:color="@android:color/transparent" />
     <stroke
         android:width="0.5dp"

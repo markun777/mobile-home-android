@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Phone Ask AI — Figma node 91:4404 (412×914)
-    Source: tJamKVuAm0fELLoddNqQ9A / 移动端首页改版
-    Board: Ask AI conversational interface
+    Phone Ask AI Home — Figma 571:46559 (412×914)
+    adapts to device height via match_parent + fitsSystemWindows
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/phone_canvas_width"
-    android:layout_height="@dimen/phone_canvas_height"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/surface_canvas">
 
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Status bar — 36dp (system-owned, rendered for layout accuracy)
-         ═══════════════════════════════════════════════════════════════════════ -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/status_bar_reference" />
-
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Header bar — 48dp: back | title | history
-         ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- Header — 48dp: back | "AI助手" | history -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -27,48 +17,35 @@
         android:orientation="horizontal"
         android:paddingHorizontal="8dp"
         android:paddingVertical="4dp"
-        android:background="@color/surface_raised">
+        android:background="@color/surface_canvas">
 
-        <!-- Left: back button (40×40 hit, 24×24 icon) -->
-        <FrameLayout
+        <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_back_arrow"
-                android:contentDescription="@string/back" />
-        </FrameLayout>
+            android:padding="8dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="@string/back" />
 
-        <!-- Center: title "问AI" -->
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/ask_ai_title"
+            android:text="@string/ai_assistant"
             android:textColor="@color/text_primary"
             android:textSize="18sp"
-            android:fontFamily="sans-serif-medium" />
+            android:fontFamily="sans-serif-medium"
+            android:includeFontPadding="false" />
 
-        <!-- Right: history icon -->
-        <FrameLayout
+        <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_history"
-                android:contentDescription="@string/history" />
-        </FrameLayout>
+            android:padding="8dp"
+            android:src="@drawable/ic_history"
+            android:contentDescription="@string/history" />
     </LinearLayout>
 
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Hero Greeting Area — 380dp wide, centered vertically
-         Spans remaining height between header and input
-         ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- Content: hero + query chips centered in remaining space -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -77,50 +54,93 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
             android:orientation="vertical"
+            android:gravity="center"
             android:paddingHorizontal="8dp">
 
-            <!-- Title: gradient text -->
-            <TextView
-                android:id="@+id/hero_title"
+            <!-- Hero text (top portion) -->
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ask_ai_hero_title"
-                android:textColor="@color/text_primary"
-                android:textSize="32sp"
-                android:fontFamily="sans-serif-medium"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:lineSpacingMultiplier="1.15" />
+                android:orientation="vertical">
 
-            <!-- Subtitle -->
-            <TextView
-                android:id="@+id/hero_subtitle"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/hero_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi，\n有什么可以帮到你？"
+                    android:textColor="@color/text_primary"
+                    android:textSize="32sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp" />
+
+                <TextView
+                    android:id="@+id/hero_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="论文润色、热梗创作、问题解答，我一直在你身边"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Query chips (bottom portion) -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/ask_ai_hero_subtitle"
-                android:textColor="@color/text_tertiary"
-                android:textSize="16sp"
-                android:gravity="center" />
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:text="今日十大热点新闻"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_query_chip"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:text="帮我整理一个东三省的旅行规划"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_query_chip"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:text="为什么打喷嚏会传染？"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_query_chip" />
+            </LinearLayout>
         </LinearLayout>
     </FrameLayout>
 
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Chat Input Bar — Figma component 171:6980 (移动端对话输入框)
-         Height: ~116dp + bottom padding
-         ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- Input bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/surface_raised"
+        android:background="@color/surface_canvas"
         android:paddingHorizontal="16dp"
+        android:paddingTop="0dp"
         android:paddingBottom="8dp">
 
-        <!-- Input card — rounded 16dp, blue border -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,59 +152,39 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Text input area -->
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="4dp"
+                    android:minHeight="48dp"
                     android:paddingHorizontal="4dp"
-                    android:minHeight="48dp">
+                    android:paddingVertical="4dp">
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <!-- Blinking cursor -->
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="16dp"
-                            android:layout_marginEnd="4dp"
-                            android:background="#2665f1" />
-
-                        <!-- Input hint -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ask_ai_input_hint"
-                            android:textColor="#999999"
-                            android:textSize="16sp" />
-                    </LinearLayout>
+                        android:text="你可以问我任何问题"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="16sp" />
                 </FrameLayout>
 
-                <!-- Spacer -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp" />
+                <View android:layout_width="match_parent" android:layout_height="8dp" />
 
                 <!-- Toolbar row -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="28dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
-                    <!-- Left: model + deep think -->
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <!-- Model selector: 豆包 + dropdown -->
+                        <!-- 豆包 chip -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="28dp"
@@ -196,19 +196,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingHorizontal="4dp"
-                                android:text="@string/model_name_doubao"
+                                android:text="豆包"
                                 android:textColor="@color/text_primary"
                                 android:textSize="12sp" />
 
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
+                                android:layout_marginStart="2dp"
                                 android:src="@drawable/ic_dropdown_arrow"
                                 android:contentDescription="@null" />
                         </LinearLayout>
 
-                        <!-- 深度思考 toggle -->
+                        <!-- 深度思考 chip -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="28dp"
@@ -221,57 +221,47 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingHorizontal="4dp"
-                                android:text="@string/deep_think"
+                                android:text="深度思考"
                                 android:textColor="@color/text_primary"
                                 android:textSize="12sp" />
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Right: camera + voice -->
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <!-- Camera -->
-                        <FrameLayout
+                        <ImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:gravity="center">
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:src="@drawable/search_camera"
-                                android:contentDescription="@string/camera" />
-                        </FrameLayout>
+                            android:padding="2dp"
+                            android:src="@drawable/search_camera"
+                            android:contentDescription="@string/camera" />
 
-                        <!-- Voice -->
-                        <FrameLayout
+                        <ImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
                             android:layout_marginStart="16dp"
-                            android:gravity="center">
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:src="@drawable/search_microphone"
-                                android:contentDescription="@string/voice" />
-                        </FrameLayout>
+                            android:padding="2dp"
+                            android:src="@drawable/search_microphone"
+                            android:contentDescription="@string/voice" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
 
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Keyboard placeholder — 368dp, gray
-         ═══════════════════════════════════════════════════════════════════════ -->
-    <View
+    <!-- Disclaimer -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="368dp"
-        android:background="@color/fill_quaternary"
-        android:alpha="0.3" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="内容由 AI 生成，仅供参考"
+        android:textColor="@color/text_disabled"
+        android:textSize="10sp"
+        android:alpha="0.8"
+        android:paddingBottom="8dp" />
 
 </LinearLayout>
