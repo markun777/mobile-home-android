@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 600 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 2147238537" clip-path="url(#clip0_0_721)">
+<g id="Vector 2854" opacity="0.3" filter="url(#filter0_f_0_721)">
+<path d="M154 149.651C385.498 290.045 395.225 156.073 325.192 149.65C262.755 143.924 371.951 138.484 446 205.903" stroke="url(#paint0_linear_0_721)" stroke-opacity="0.6" stroke-width="64" stroke-linecap="round"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_0_721" x="0.895309" y="-6.59296" width="598.205" height="373.183" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="60.55" result="effect1_foregroundBlur_0_721"/>
+</filter>
+<linearGradient id="paint0_linear_0_721" x1="375.442" y1="198.36" x2="195.093" y2="114.605" gradientUnits="userSpaceOnUse">
+<stop stop-color="#26FFDB" stop-opacity="0.5"/>
+<stop offset="1" stop-color="#0048FF"/>
+</linearGradient>
+<clipPath id="clip0_0_721">
+<rect width="600" height="360" fill="white"/>
+</clipPath>
+</defs>
+</svg>

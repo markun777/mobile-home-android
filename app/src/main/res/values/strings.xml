@@ -29,4 +29,16 @@
     <string name="shortcut_zhihu">知乎</string>
     <string name="shortcut_jd">京东</string>
     <string name="shortcut_add">添加</string>
+
+    <!-- Ask AI screen — Figma 91:4404 -->
+    <string name="ask_ai_title">问AI</string>
+    <string name="ask_ai_hero_title">Hi，\n有什么可以帮到你？</string>
+    <string name="ask_ai_hero_subtitle">论文润色、热梗创作、问题解答，我一直在你身边</string>
+    <string name="ask_ai_input_hint">你可以问我任何问题</string>
+    <string name="model_name_doubao">豆包</string>
+    <string name="deep_think">深度思考</string>
+    <string name="back">返回</string>
+    <string name="history">历史记录</string>
+    <string name="camera">相机</string>
+    <string name="voice">语音</string>
 </resources>

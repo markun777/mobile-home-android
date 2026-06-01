@@ -99,7 +99,8 @@ Last updated: `2026-06-01`
 | Board | Node | Expo Preview | Formal XML Delivery |
 |---|---|---|---|
 | Phone home default | `571:44695` | reference exists | ✅ **updated, built, emulator verified** |
-| Phone Ask AI | `91:4404` | deferred | deferred |
+| Phone Ask AI | `91:4404` | reference exists | ✅ **initial XML layout, build passes, emulator verify pending** |
+| Pad home default | `91:5128` | deferred | independent composition pending |
 | Pad home default | `91:5128` | deferred | independent composition pending |
 
 ## Migration Sequence Remaining
