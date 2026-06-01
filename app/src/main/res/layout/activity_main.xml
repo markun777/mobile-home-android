@@ -385,8 +385,8 @@
             <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
                 android:layout_weight="1" android:orientation="vertical"
                 android:gravity="center" android:padding="2dp">
-                <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                    android:src="@drawable/ic_nav_home" android:contentDescription="@null" />
+                <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                    android:src="@drawable/nav_home" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="@string/nav_home" android:textColor="@color/text_primary"
                     android:textSize="10sp" android:gravity="center" />
@@ -396,8 +396,8 @@
             <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
                 android:layout_weight="1" android:orientation="vertical"
                 android:gravity="center" android:padding="2dp">
-                <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                    android:src="@drawable/ic_nav_recommend" android:contentDescription="@null" />
+                <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                    android:src="@drawable/nav_recommend" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="@string/nav_recommend" android:textColor="@color/text_primary"
                     android:textSize="10sp" android:gravity="center" />
@@ -407,8 +407,8 @@
             <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
                 android:layout_weight="1" android:orientation="vertical"
                 android:gravity="center" android:padding="2dp">
-                <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                    android:src="@drawable/ic_nav_video" android:contentDescription="@null" />
+                <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                    android:src="@drawable/nav_video" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="@string/nav_video" android:textColor="@color/text_primary"
                     android:textSize="10sp" android:gravity="center" />
@@ -418,8 +418,8 @@
             <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
                 android:layout_weight="1" android:orientation="vertical"
                 android:gravity="center" android:padding="2dp">
-                <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                    android:src="@drawable/ic_nav_novel" android:contentDescription="@null" />
+                <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                    android:src="@drawable/nav_novel" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="@string/nav_novel" android:textColor="@color/text_primary"
                     android:textSize="10sp" android:gravity="center" />
@@ -429,8 +429,8 @@
             <LinearLayout android:layout_width="0dp" android:layout_height="44dp"
                 android:layout_weight="1" android:orientation="vertical"
                 android:gravity="center" android:padding="2dp">
-                <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                    android:src="@drawable/ic_nav_menu" android:contentDescription="@null" />
+                <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                    android:src="@drawable/nav_menu" android:contentDescription="@null" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="@string/nav_menu" android:textColor="@color/text_primary"
                     android:textSize="10sp" android:gravity="center" />
