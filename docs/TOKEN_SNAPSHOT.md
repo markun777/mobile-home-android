@@ -15,8 +15,8 @@ Last updated: `2026-05-28`
 ### Delivery Mapping
 
 | Output | Format | Location | Status |
-|---|---|---|---|
-| Preview (Expo) | `src/theme/tokens.js` (JS named exports) | repository root | reference only |
+|---|---|---|
+| Preview (Expo) | removed | — | reference retired |
 | Formal XML delivery | Android `res/values/colors.xml` | `app/src/main/res/values/` | synced ✅ |
 | Dark mode XML | Android `res/values-night/colors.xml` | `app/src/main/res/values-night/` | synced ✅ |
 | Spacing / dimens | Android `res/values/dimens.xml` | `app/src/main/res/values/` | synced ✅ |
