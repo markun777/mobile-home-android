@@ -6,7 +6,7 @@ Restore the Android browser homepage from the Figma source of truth for an
 Android XML receiving team.
 
 - Figma file: `tJamKVuAm0fELLoddNqQ9A / 移动端首页改版`
-- Phone source: `85:3451`
+- Phone source: `571:44695`
 - Pad source: `91:5128`
 - Specification page / board: `规范 · Browser Color v3.0` /
   `Browser Color System v3.0` (`106:3910`)
@@ -24,10 +24,10 @@ implementation.
   colors.
 - Expected layout targets: Phone in `res/layout/`, Pad composition in
   `res/layout-sw600dp/` or a separately approved tablet resource variant.
-- Preview runtime: the current React Native + Expo SDK 56 code is reference
-  output only and is planned to move under `preview/expo/`.
-- Expo web or device rendering may support visual discussion, but it cannot be
-  recorded as verification of the formal XML implementation.
+- Preview runtime: retired. The earlier React Native + Expo scaffold has been
+  removed from this repository; native Android render evidence is canonical.
+- Web preview artifacts may support discussion only if explicitly recreated,
+  but they cannot be recorded as verification of the formal XML implementation.
 
 ## Before Editing
 
@@ -43,7 +43,7 @@ implementation.
 
 - Use `Browser Color v3.0` for both Phone and Pad unless an approved exception
   is recorded in `docs/TOKEN_SNAPSHOT.md`.
-- Keep Expo explicitly labeled preview/reference until it is relocated; do not
+- Keep any recreated preview explicitly labeled preview/reference; do not
   extend it as though it were formal XML delivery work.
 - Implement the native project scaffold and Android resource token mapping
   before claiming a formal board implementation.
@@ -64,5 +64,5 @@ For each formally delivered XML board:
 3. Record screenshot evidence, device profile, system inset handling, packaged
    resource resolution, and source drift in `docs/PROGRESS.md` and issue `#1`.
 
-For the Expo preview only, record bundle/render checks as preview evidence and
-never as XML delivery acceptance.
+For any preview-only surface, record bundle/render checks as preview evidence
+and never as XML delivery acceptance.
