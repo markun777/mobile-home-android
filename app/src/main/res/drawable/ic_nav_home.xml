@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- House outline — Figma 571:44948 主页 icon -->
+    <path
+        android:pathData="M10.553,2.357 C11.241,1.880 12.153,1.882 12.839,2.362 L20.132,7.358 C20.675,7.731 21,8.347 21,9.006 L21,19 C21,20.657 19.657,22 18,22 L6,22 C4.343,22 3,20.657 3,19 L3,8.997 C3,8.341 3.321,7.727 3.860,7.353 Z"
+        android:strokeColor="#000000"
+        android:strokeAlpha="0.88"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent" />
+</vector>

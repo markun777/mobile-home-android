@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">联想浏览器</string>
-    <string name="search_placeholder">告诉我想要了解的内容</string>
+    <string name="search_placeholder">输入关键信息</string>
     <string name="search_web">搜全网</string>
-    <string name="ask_ai">问AI</string>
-    <string name="engine_name">百度</string>
+    <string name="ask_ai">AI搜索</string>
 
-    <!-- Shortcut labels -->
+    <!-- Bottom nav labels — Figma 571:44695 -->
+    <string name="nav_home">主页</string>
+    <string name="nav_news">资讯</string>
+    <string name="nav_video">视频</string>
+    <string name="nav_novel">小说</string>
+    <string name="nav_menu">菜单</string>
+
+    <!-- Tab manager -->
+    <string name="tab_count">1</string>
+
+    <!-- Shortcut labels — Figma 571:44695 grid order -->
     <string name="shortcut_bookmarks">书签</string>
     <string name="shortcut_history">历史记录</string>
-    <string name="shortcut_curated">网址精选</string>
-    <string name="shortcut_games">小游戏</string>
-    <string name="shortcut_weibo">微博</string>
     <string name="shortcut_novel">免费小说</string>
+    <string name="shortcut_drama">短剧</string>
+    <string name="shortcut_games">小游戏</string>
+    <string name="shortcut_curated">网址精选</string>
+    <string name="shortcut_weibo">微博</string>
     <string name="shortcut_baidu">百度</string>
     <string name="shortcut_iqiyi">爱奇艺</string>
     <string name="shortcut_youku">优酷</string>

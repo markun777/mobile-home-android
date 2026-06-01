@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="20"
+    android:viewportHeight="20">
+    <!-- Rounded square outline — 页签管理 icon -->
+    <path
+        android:pathData="M4,1 L16,1 C17.657,1 19,2.343 19,4 L19,16 C19,17.657 17.657,19 16,19 L4,19 C2.343,19 1,17.657 1,16 L1,4 C1,2.343 2.343,1 4,1 Z"
+        android:strokeColor="#000000"
+        android:strokeAlpha="0.88"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent" />
+</vector>
