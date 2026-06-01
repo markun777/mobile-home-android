@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:paddingBottom="80dp">
+            android:paddingBottom="60dp">
 
             <!-- ─── Logo — 64×64dp, 167dp from canvas top ──────────────── -->
             <ImageView
@@ -339,14 +339,14 @@
         android:layout_height="28dp"
         android:layout_gravity="top|end"
         android:layout_marginTop="47dp"
-        android:layout_marginEnd="24dp">
+        android:layout_marginEnd="17dp"
+
+        android:clipChildren="false">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_tab_manager"
-            android:contentDescription="@null" />
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_tab_manager_button" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -354,7 +354,8 @@
             android:layout_gravity="center"
             android:text="@string/tab_count"
             android:textColor="@color/text_primary"
-            android:textSize="11sp"
+            android:textSize="10sp"
+            android:textStyle="bold"
             android:gravity="center" />
 
     </FrameLayout>
