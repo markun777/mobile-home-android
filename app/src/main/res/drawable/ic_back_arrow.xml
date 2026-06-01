@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- chevron-left arrow (Figma: icon/箭头/左, node I91:4408;566:73045) -->
+    <path
+        android:pathData="M15.168,3.807 C15.48,3.45 15.48,2.873 15.145,2.518 C14.811,2.162 14.243,2.131 13.931,2.488 L6.139,10.34 C5.651,10.846 5.651,11.654 6.139,12.16 L13.931,20.012 C14.243,20.369 14.811,20.338 15.145,19.982 C15.48,19.627 15.48,19.05 15.168,18.693 L8.03,12 L15.168,3.807 Z"
+        android:fillColor="#000000"
+        android:fillAlpha="0.88" />
+</vector>

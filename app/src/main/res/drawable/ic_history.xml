@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- clock/history icon (Figma: icon/历史记录, node I91:4408;566:71227) -->
+    <path
+        android:pathData="M22,12 C22,17.523 17.523,22 12,22 C6.477,22 2,17.523 2,12 C2,6.477 6.477,2 12,2 C17.523,2 22,6.477 22,12 Z M11,6.5 C11,6.224 11.224,6 11.5,6 L12.5,6 C12.776,6 13,6.224 13,6.5 L13,12.1 L16.412,13.778 C16.752,13.938 16.876,14.331 16.689,14.654 C16.503,14.977 16.152,15.093 15.812,14.933 L11.548,12.482 C11.224,12.307 11,11.969 11,11.625 Z"
+        android:fillColor="#000000"
+        android:fillAlpha="0.88" />
+</vector>
