@@ -437,21 +437,6 @@
 
         </LinearLayout>
 
-        <!-- System navigation bar area — 20dp with gesture handle -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/system_nav_bar_height"
-            android:gravity="center"
-            android:background="@color/surface_canvas">
-
-            <View
-                android:layout_width="@dimen/system_nav_handle_width"
-                android:layout_height="@dimen/system_nav_handle_height"
-                android:background="@drawable/bg_nav_handle"
-                android:contentDescription="@null" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -110,6 +110,7 @@ Last updated: `2026-06-01`
 | Pad | Deferred | Open a separate thread/branch for `91:5128` |
 | Historical branches | Behind | `codex/phone-xml-build-fix` and `codex/xml-delivery-transition` are superseded by PR #4/main decisions |
 | Scope-sync build | ✅ passed | `./gradlew --no-daemon --console=plain assembleDebug` after returning app entry to Phone home |
+| Phone shortcut assets | ✅ synced | 36dp base plus hdpi/xhdpi/xxhdpi density variants for `shortcut_*` tiles |
 
 ## Board Status
 

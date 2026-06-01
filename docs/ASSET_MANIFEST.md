@@ -15,7 +15,7 @@
 | Header background | `assets/images/home_header_bg.png` | packaged as `@drawable/home_header_bg`; not rendered after design review removed the header image |
 | Brand logo | `assets/icons/brand_logo.png` | `@drawable/brand_logo`, rendered at `64 x 64` |
 | Search actions | `assets/icons/search_camera.png`, `search_microphone.png`, `engine_dropdown.png` | `@drawable/search_camera`, `@drawable/search_microphone`, `@drawable/engine_dropdown` |
-| Shortcut tiles | `assets/icons/shortcut_*.png` | `@drawable/shortcut_*` |
+| Shortcut tiles | `assets/icons/shortcut_*.png` | `@drawable/shortcut_*` with 36dp base plus hdpi/xhdpi/xxhdpi density variants for Phone home |
 | Bottom navigation | `assets/icons/nav_*.png` | `@drawable/nav_*`; formal XML currently uses recommend, video, home, reading, and menu |
 | Ask AI hero | n/a | `@drawable/ask_ai_hero_bg`, retained for parked Ask AI work |
 | XML shape drawables | n/a | `bg_search_mode_tab`, `bg_tab_active`, `bg_engine_selector`, `bg_nav_handle` |
@@ -26,5 +26,7 @@
 - `[x]` Expo web export previously resolved preview assets; the preview has
       since been retired.
 - `[x]` Assets are mapped into native Android resource packaging.
+- `[x]` Phone shortcut tiles include density-specific PNG variants
+      (`54/72/108px`) for Android rendering.
 - `[x]` XML application package/runtime renders assets on a named
       emulator/device.
