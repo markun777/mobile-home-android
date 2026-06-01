@@ -221,7 +221,7 @@
 
                 </LinearLayout>
 
-                <!-- ── Row 2: 网址精选 微博 百度 爱奇艺 优酷 ──────────── -->
+                <!-- ── Row 2: 网址精选 爱奇艺 微博 优酷 百度 ──────────── -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -239,26 +239,6 @@
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
-                    <!-- 微博 -->
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
-                        <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
-                            android:src="@drawable/shortcut_weibo" android:contentDescription="@null" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_weibo"
-                            android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
-                    </LinearLayout>
-
-                    <!-- 百度 -->
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
-                        <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
-                            android:src="@drawable/shortcut_baidu" android:contentDescription="@null" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp" android:text="@string/shortcut_baidu"
-                            android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
-                    </LinearLayout>
-
                     <!-- 爱奇艺 -->
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
@@ -269,6 +249,16 @@
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 
+                    <!-- 微博 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
+                            android:src="@drawable/shortcut_weibo" android:contentDescription="@null" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp" android:text="@string/shortcut_weibo"
+                            android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
+                    </LinearLayout>
+
                     <!-- 优酷 -->
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
@@ -276,6 +266,16 @@
                             android:src="@drawable/shortcut_youku" android:contentDescription="@null" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:layout_marginTop="4dp" android:text="@string/shortcut_youku"
+                            android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- 百度 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center_horizontal">
+                        <ImageView android:layout_width="@dimen/shortcut_icon_size" android:layout_height="@dimen/shortcut_icon_size"
+                            android:src="@drawable/shortcut_baidu" android:contentDescription="@null" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp" android:text="@string/shortcut_baidu"
                             android:textColor="@color/text_primary" android:textSize="12sp" android:gravity="center" />
                     </LinearLayout>
 

@@ -1,6 +1,6 @@
 # Product Restoration Preflight
 
-Status: `phone-default-xml-build-and-render-verified`
+Status: `phone-default-57144695-stable-sdk-emulator-verified`
 
 ## Source And Delivery Runtime
 
@@ -26,7 +26,7 @@ Status: `phone-default-xml-build-and-render-verified`
 
 | Surface | Figma Node | Preview State | Formal XML Delivery Gate |
 |---|---|---|---|
-| Phone home default | `85:3451` | implemented in Expo preview | XML implemented; build and emulator render verified |
+| Phone home default | `571:44695` | implemented in Expo preview | XML implemented; stable SDK build and emulator render verified |
 | Phone Ask AI | `91:4404` | mapped only | defer until XML default board verified |
 | Pad home default | `91:5128` | mapped only | independent XML composition pending |
 
@@ -57,8 +57,9 @@ Status: `phone-default-xml-build-and-render-verified`
 - `[x]` Native Android build succeeds for the XML implementation.
 - `[x]` Phone XML screen rendered on a named Android emulator/device.
 - `[x]` Initial screenshot evidence against `85:3451` recorded.
+- `[x]` Updated screenshot evidence against `571:44695` recorded.
 - `[x]` Packaged resource resolution verified in local debug build/render.
-- `[ ]` Detailed pixel/geometry drift review against `85:3451` accepted.
+- `[ ]` Detailed pixel/geometry drift review against `571:44695` accepted.
 - `[ ]` Pad XML implementation and tablet render verification completed.
 
 Do not claim Android XML delivery complete from the existing Expo preview or

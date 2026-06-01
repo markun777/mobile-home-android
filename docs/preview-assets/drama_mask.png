@@ -1,0 +1,27 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mask group">
+<mask id="mask0_0_5" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36">
+<circle id="Ellipse 2256" cx="18" cy="18" r="18" fill="url(#paint0_linear_0_5)"/>
+</mask>
+<g mask="url(#mask0_0_5)">
+<g id="Group 48096411">
+<ellipse id="Ellipse 2986" cx="32.3576" cy="20.8048" rx="32.3576" ry="20.8048" transform="matrix(-0.806936 -0.590638 -0.590638 0.806936 40.2536 19.3104)" fill="url(#paint1_linear_0_5)" fill-opacity="0.4"/>
+<ellipse id="Ellipse 2987" cx="24.652" cy="17.9471" rx="24.652" ry="17.9471" transform="matrix(-0.96035 -0.278796 -0.278796 0.96035 32.7981 6.69415)" fill="url(#paint2_linear_0_5)" fill-opacity="0.3"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_5" x1="27.9474" y1="31.2632" x2="2.84211" y2="-4.73684" gradientUnits="userSpaceOnUse">
+<stop stop-color="#342ABC"/>
+<stop offset="1" stop-color="#8067F2"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_5" x1="5.01353" y1="20.9337" x2="40.2833" y2="11.8596" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4086FF"/>
+<stop offset="1" stop-color="#5E1FBD"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_5" x1="3.8196" y1="18.0583" x2="31.0623" y2="11.8682" gradientUnits="userSpaceOnUse">
+<stop stop-color="#40FCFF"/>
+<stop offset="1" stop-color="#391FBD"/>
+</linearGradient>
+</defs>
+</svg>

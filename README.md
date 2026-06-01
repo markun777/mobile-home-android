@@ -17,11 +17,12 @@ Confirmed on `2026-05-27`:
 ## Current State
 
 - Phone default XML implementation exists in `app/src/main/res/layout/`
-  from Figma node `85:3451`.
-- `./gradlew assembleDebug` passes with JDK 17 and the Android SDK.
+  from Figma node `571:44695`.
+- `./gradlew assembleDebug` passes with JDK 17 and the stable local Android
+  SDK at `/Users/markun/Library/Android/sdk`.
 - The debug APK has been installed and rendered on
   `MobileHomePhone_API35` (`1080 x 2340`, density `440`); evidence is recorded
-  in `docs/android-emulator-phone-default.png`.
+  in `docs/android-emulator-phone-57144695.png`.
 - Pad remains a separately composed surface from node `91:5128`; it is not a
   scaled Phone layout.
 - The current Expo files remain at repository root until the migration step
@@ -32,12 +33,17 @@ Confirmed on `2026-05-27`:
 Use JDK 17. On this machine the project pins:
 
 ```sh
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+export ANDROID_HOME=/Users/markun/Library/Android/sdk
+export ANDROID_SDK_ROOT=/Users/markun/Library/Android/sdk
 ./gradlew assembleDebug
 ```
 
-If Android SDK discovery is not configured globally, pass `ANDROID_HOME` or
-`ANDROID_SDK_ROOT` to a local SDK that contains platform `android-35` and build
-tools `34.0.0`.
+The local verification emulator is `MobileHomePhone_API35`, stored under
+`/Users/markun/Library/Android/avd`. It uses Android API 35 Google APIs
+`arm64-v8a`, `1080 x 2340`, density `440`.
+
+For more local setup detail, see `docs/ANDROID_LOCAL_TOOLCHAIN.md`.
 
 ## Target Repository Shape
 

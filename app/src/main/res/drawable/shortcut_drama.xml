@@ -1,16 +1,16 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Ellipse 2255">
-<circle cx="18" cy="18" r="18" fill="url(#paint0_linear_0_230)"/>
-<circle cx="18" cy="18" r="18" fill="url(#paint1_linear_0_230)"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear_0_230" x1="27.9474" y1="31.2632" x2="2.84211" y2="-4.73684" gradientUnits="userSpaceOnUse">
-<stop stop-color="#1FBD63"/>
-<stop offset="1" stop-color="#1FBD63"/>
-</linearGradient>
-<linearGradient id="paint1_linear_0_230" x1="27.9474" y1="31.2632" x2="2.84211" y2="-4.73684" gradientUnits="userSpaceOnUse">
-<stop stop-color="#5D52FF"/>
-<stop offset="1" stop-color="#A18BFF"/>
-</linearGradient>
-</defs>
-</svg>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
+    <path
+        android:fillColor="#7A6BFF"
+        android:pathData="M18,0 C27.941,0 36,8.059 36,18 C36,27.941 27.941,36 18,36 C8.059,36 0,27.941 0,18 C0,8.059 8.059,0 18,0 Z" />
+    <path
+        android:fillColor="#000000"
+        android:fillAlpha="0.10"
+        android:pathData="M18,0 C27.941,0 36,8.059 36,18 C36,27.941 27.941,36 18,36 C8.059,36 0,27.941 0,18 C0,8.059 8.059,0 18,0 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,11 L24,18 L14,25 Z" />
+</vector>

@@ -1,3 +1,12 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 20 19.3439" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Rectangle 1891" d="M8.85254 1.35656C9.54061 0.879624 10.4528 0.881329 11.1387 1.36144L14.4268 3.6632L14.4336 3.66808L18.1318 6.20714C18.6751 6.58015 19 7.19657 19 7.85558V15.3439C19 17.0007 17.6569 18.3439 16 18.3439H4C2.34315 18.3439 1 17.0007 1 15.3439V7.84679C1.00003 7.19104 1.32147 6.57688 1.86035 6.20324L5.56934 3.63195L8.85254 1.35656Z" stroke="var(--stroke-0, black)" stroke-opacity="0.88" stroke-width="2"/>
-</svg>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="20"
+    android:viewportHeight="20">
+    <path
+        android:pathData="M8.853,1.357 C9.541,0.88 10.453,0.881 11.139,1.361 L14.427,3.663 L14.434,3.668 L18.132,6.207 C18.675,6.58 19,7.197 19,7.856 L19,15.344 C19,17.001 17.657,18.344 16,18.344 L4,18.344 C2.343,18.344 1,17.001 1,15.344 L1,7.847 C1,7.191 1.321,6.577 1.86,6.203 L5.569,3.632 Z"
+        android:strokeColor="#000000"
+        android:strokeAlpha="0.88"
+        android:strokeWidth="2"
+        android:fillColor="#00000000" />
+</vector>

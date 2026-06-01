@@ -4,7 +4,7 @@ Last updated: `2026-06-01`
 
 ## Current Status
 
-`Phone default XML updated to Figma 571:44695 — bottom nav labels, tab manager, shortcut reorder; committed and pushed; awaiting emulator re-verification`
+`Phone default XML updated to Figma 571:44695; stable local Android SDK/AVD migrated; Gradle build, emulator install, app launch, and screenshot verified`
 
 ## Decision Sync
 
@@ -78,20 +78,35 @@ Last updated: `2026-06-01`
 | New drawables | ✅ done | ic_nav_home/news/video/novel/menu, ic_tab_manager, nav_home_v2, nav_news, shortcut_drama, tab_manager_bg/icon |
 | Commit + push | ✅ done | `8705764` on `phone-xml-layout` |
 
+## Completed — Stable Android Toolchain Migration + Reverification ✅
+
+| Step | Status | Evidence |
+|---|---|---|
+| Stable SDK path | ✅ done | `/Users/markun/Library/Android/sdk` |
+| Stable AVD path | ✅ done | `/Users/markun/Library/Android/avd/MobileHomePhone_API35.avd` |
+| commandline-tools | ✅ done | Replaced incomplete `sdkmanager` with full `cmdline-tools;latest` |
+| platform-tools | ✅ done | Installed official `platform-tools` `37.0.0` with package metadata |
+| emulator | ✅ done | Installed official arm64 emulator `36.5.11` (`emulator-darwin_aarch64-15261927.zip`) |
+| system image | ✅ done | Installed Android 35 Google APIs `arm64-v8a` revision `9` (`3.8G`) |
+| AVD recreation | ✅ done | `MobileHomePhone_API35`, Pixel 5 profile, `1080 x 2340`, density `440` |
+| Native build | ✅ done | `./gradlew --no-daemon --console=plain assembleDebug` passes |
+| Resource fix | ✅ done | Replaced invalid SVG/`<line>` drawables with Android `vector` resources |
+| Emulator install/render | ✅ done | APK installed and `com.lenovo.mobilehome/.MainActivity` launched |
+| Screenshot evidence | ✅ done | `docs/android-emulator-phone-57144695.png` |
+
 ## Board Status
 
 | Board | Node | Expo Preview | Formal XML Delivery |
 |---|---|---|---|
-| Phone home default | `571:44695` | reference exists | ✅ **updated, committed — emulator re-verify pending** |
+| Phone home default | `571:44695` | reference exists | ✅ **updated, built, emulator verified** |
 | Phone Ask AI | `91:4404` | deferred | deferred |
 | Pad home default | `91:5128` | deferred | independent composition pending |
 
 ## Migration Sequence Remaining
 
-1. Run `./gradlew assembleDebug` + emulator install on updated APK, capture screenshot.
-2. Visual review against Figma `571:44695` — record any pixel/geometry drift.
-3. Begin Ask AI or Pad only after Phone XML visual review accepted.
-4. Once XML delivery accepted, relocate Expo to `preview/expo/`.
+1. Visual review against Figma `571:44695` — record any pixel/geometry drift.
+2. Begin Ask AI or Pad only after Phone XML visual review accepted.
+3. Once XML delivery accepted, relocate Expo to `preview/expo/`.
 
 ## Token Source Policy
 

@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 58.7515 12.7071" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 2147239008">
+<g id="Group 131">
+<path id="Rectangle 59" d="M6.37574 0.353554L0.587868 6.14142C0.470711 6.25858 0.470711 6.44853 0.587868 6.56569L6.37574 12.3536" stroke="var(--stroke-0, black)" stroke-opacity="0.88"/>
+<line id="Line 10" x1="0.875736" y1="6.35355" x2="14.8757" y2="6.35355" stroke="var(--stroke-0, black)" stroke-opacity="0.88" stroke-linecap="square"/>
+</g>
+<line id="Line 9" x1="29.7757" y1="0.353553" x2="29.7757" y2="12.3536" stroke="var(--stroke-0, black)" stroke-opacity="0.08" stroke-width="0.8"/>
+<g id="Group 132">
+<path id="Rectangle 59_2" d="M52.3757 0.353554L58.1636 6.14142C58.2808 6.25858 58.2808 6.44853 58.1636 6.56569L52.3757 12.3536" stroke="var(--stroke-0, black)" stroke-opacity="0.88"/>
+<line id="Line 10_2" x1="0.5" y1="-0.5" x2="14.5" y2="-0.5" transform="matrix(-1 0 0 1 58.3757 6.85355)" stroke="var(--stroke-0, black)" stroke-opacity="0.88" stroke-linecap="square"/>
+</g>
+</g>
+</svg>
