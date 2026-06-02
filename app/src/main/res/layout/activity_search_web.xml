@@ -6,9 +6,9 @@
     Layout stacking (top→bottom):
       status bar 36dp + header 48dp = 84dp fixed
       NestedScrollView (weight=1): content start top=149 → paddingTop=65dp
-      URL bar 48dp
-      search input card (wrap_content)
-      keyboard placeholder 368dp
+      search input card (wrap_content, top=385)
+      URL bar 48dp (top=498)
+      keyboard 368dp (bottom-aligned)
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -367,87 +367,6 @@
     </androidx.core.widget.NestedScrollView>
 
     <!-- ═══════════════════════════════════════════════════════════════════════
-         URL bar — 48dp, bg white (Figma 768:14138 top=498)
-         px=16dp, contains www. / . .com .cn segments + domain switcher
-         ═══════════════════════════════════════════════════════════════════════ -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:background="@color/surface_canvas">
-
-        <!-- Domain path segments with dividers -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="www."
-                android:textColor="@color/text_primary"
-                android:textSize="12sp" />
-
-            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
-                android:background="@color/text_disabled" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="/"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp" />
-
-            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
-                android:background="@color/text_disabled" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="."
-                android:textColor="@color/text_primary"
-                android:textSize="12sp" />
-
-            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
-                android:background="@color/text_disabled" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text=".com"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp" />
-
-            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
-                android:background="@color/text_disabled" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text=".cn"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <!-- Domain switcher (58×12dp, Figma 768:14149) -->
-        <ImageView
-            android:layout_width="58dp"
-            android:layout_height="12dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/ic_domain_switcher"
-            android:contentDescription="@null" />
-    </LinearLayout>
-
-    <!-- ═══════════════════════════════════════════════════════════════════════
          Search input card (Figma 768:14157/14158)
          bg white, border 1dp #333, rounded 16dp, px=16dp py=8dp
          ═══════════════════════════════════════════════════════════════════════ -->
@@ -557,6 +476,86 @@
     </LinearLayout>
 
     <!-- ═══════════════════════════════════════════════════════════════════════
+         URL bar — 48dp, bg white (Figma 768:14138 top=498)
+         px=16dp, contains www. / . .com .cn segments + domain switcher
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:background="@color/surface_canvas">
+
+        <!-- Domain path segments with dividers -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="www."
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="/"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="."
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=".com"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=".cn"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Domain switcher (58×12dp, Figma 768:14149) -->
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="12dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_domain_switcher"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
          Keyboard — 368dp (Figma 82:3489, Screenshot_20230920-134817)
          Full Android keyboard screenshot, cropped to keyboard portion
          ═══════════════════════════════════════════════════════════════════════ -->
