@@ -563,7 +563,7 @@
         android:layout_width="match_parent"
         android:layout_height="368dp"
         android:src="@drawable/bg_keyboard"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         android:contentDescription="@null" />
 
 </LinearLayout>
