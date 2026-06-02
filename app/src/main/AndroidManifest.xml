@@ -19,7 +19,7 @@
         <activity
             android:name=".SearchWebActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
 
     </application>
 
