@@ -384,32 +384,24 @@
             android:background="@drawable/bg_search_card_filled"
             android:padding="12dp">
 
-            <!-- Input area: cursor + placeholder (Figma 768:14177) -->
-            <LinearLayout
+            <!-- Input area: EditText with hint (Figma 768:14177) -->
+            <EditText
+                android:id="@+id/search_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="请输入文本发起搜索"
+                android:textColorHint="@color/text_placeholder"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:minHeight="21dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="2dp">
-
-                <!-- Input area: EditText with hint (Figma 768:14177) -->
-                <EditText
-                    android:id="@+id/search_input"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:hint="请输入文本发起搜索"
-                    android:textColorHint="@color/text_placeholder"
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:maxLines="1"
-                    android:inputType="text"
-                    android:imeOptions="actionSearch" />
-            </LinearLayout>
+                android:singleLine="true"
+                android:inputType="text"
+                android:imeOptions="actionSearch" />
 
             <!-- Spacer 24dp -->
-            <View android:layout_width="0dp" android:layout_height="24dp" />
+            <View android:layout_width="match_parent" android:layout_height="24dp" />
 
             <!-- Toolbar row: model switch left, camera + voice right (Figma 768:14210) -->
             <LinearLayout
