@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 768:14226 icon/小箭头/下, exported SVG -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="16dp"
     android:height="16dp"
     android:viewportWidth="16"
     android:viewportHeight="16">
-    <!-- chevron-down (Figma: icon/小箭头/下) -->
     <path
-        android:pathData="M3.8,5.8 C4.1,5.4 4.7,5.4 5.1,5.7 L8,8.3 L10.9,5.7 C11.3,5.4 11.9,5.4 12.2,5.8 C12.6,6.1 12.6,6.7 12.2,7.0 L8.7,10.2 C8.3,10.5 7.7,10.5 7.3,10.2 L3.8,7.0 C3.4,6.7 3.4,6.1 3.8,5.8 Z"
-        android:fillColor="@color/text_primary" />
+        android:pathData="M10.917,6.146C11.204,5.916 11.624,5.963 11.854,6.250C12.084,6.538 12.037,6.957 11.750,7.187L8.416,9.854C8.173,10.049 7.827,10.049 7.584,9.854L4.250,7.187C3.963,6.957 3.916,6.538 4.146,6.250C4.376,5.963 4.795,5.916 5.083,6.146L8.000,8.479L10.917,6.146Z"
+        android:fillColor="#E0000000" />
 </vector>

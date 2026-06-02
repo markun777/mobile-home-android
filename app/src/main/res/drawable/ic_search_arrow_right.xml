@@ -1,5 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 768:14271 chevron-right arrow, exported SVG -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="18dp" android:height="18dp" android:viewportWidth="18" android:viewportHeight="18">
-    <path android:pathData="M7,4L13,9L7,14" android:strokeColor="@color/text_primary"
-        android:strokeWidth="1.5" android:fillColor="@android:color/transparent" android:strokeLineCap="round" />
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+    <path
+        android:pathData="M7.125,4.5L11.625,9L7.125,13.5"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent" />
 </vector>
