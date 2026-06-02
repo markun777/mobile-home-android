@@ -26,22 +26,29 @@
 
     <!-- ═══════════════════════════════════════════════════════════════════════
          Header: 48dp — back button only (Figma 768:14136)
+         Figma grid: px=8, py=4, cell 40dp h, button 40×40 centered in cell
+         → 48dp parent, center_vertical auto-distributes 4dp above/below
          ═══════════════════════════════════════════════════════════════════════ -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="8dp"
-        android:paddingVertical="4dp">
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
 
-        <ImageView
-            android:id="@+id/btn_back"
+        <FrameLayout
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="8dp"
-            android:src="@drawable/ic_back_arrow"
-            android:contentDescription="@string/back" />
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="@string/back" />
+        </FrameLayout>
     </LinearLayout>
 
     <!-- ═══════════════════════════════════════════════════════════════════════
