@@ -8,7 +8,7 @@
       NestedScrollView (weight=1): content start top=149 → paddingTop=65dp
       search input card (wrap_content, top=385)
       URL bar 48dp (top=498)
-      keyboard 368dp (bottom-aligned)
+      system keyboard (IME, adjustResize)
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -392,21 +392,20 @@
                 android:orientation="horizontal"
                 android:paddingHorizontal="2dp">
 
-                <!-- Text cursor (2×21dp) -->
-                <View
-                    android:layout_width="2dp"
-                    android:layout_height="21dp"
-                    android:background="@color/text_disabled" />
-
-                <TextView
+                <!-- Input area: EditText with hint (Figma 768:14177) -->
+                <EditText
+                    android:id="@+id/search_input"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="2dp"
-                    android:text="请输入文本发起搜索"
-                    android:textColor="@color/text_placeholder"
+                    android:background="@android:color/transparent"
+                    android:hint="请输入文本发起搜索"
+                    android:textColorHint="@color/text_placeholder"
+                    android:textColor="@color/text_primary"
                     android:textSize="14sp"
-                    android:singleLine="true" />
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch" />
             </LinearLayout>
 
             <!-- Spacer 24dp -->
@@ -555,15 +554,5 @@
             android:src="@drawable/ic_domain_switcher"
             android:contentDescription="@null" />
     </LinearLayout>
-
-         Keyboard — 368dp (Figma 82:3489, Screenshot_20230920-134817)
-         Full Android keyboard screenshot, cropped to keyboard portion
-         ═══════════════════════════════════════════════════════════════════════ -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="368dp"
-        android:src="@drawable/bg_keyboard"
-        android:scaleType="fitCenter"
-        android:contentDescription="@null" />
 
 </LinearLayout>
