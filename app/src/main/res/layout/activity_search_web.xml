@@ -61,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:fillViewport="true"
         android:clipToPadding="false">
 
         <LinearLayout
@@ -68,8 +69,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="16dp"
-            android:paddingTop="65dp"
-            android:paddingBottom="16dp">
+            android:paddingTop="0dp"
+            android:paddingBottom="16dp"
+            android:gravity="bottom">
 
             <!-- ── 搜索推荐 section (Figma 768:14254) ── -->
             <LinearLayout
