@@ -373,12 +373,12 @@
 
     <!-- ═══════════════════════════════════════════════════════════════════════
          Search input card (Figma 768:14157/14158)
-         bg white, border 1dp #333, rounded 16dp, px=16dp py=8dp
+         Outer wrapper px=16dp py=8dp — NO background (page bg visible)
+         Inner card: bg white, border 1dp #333, rounded 16dp, padding 12dp
          ═══════════════════════════════════════════════════════════════════════ -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/surface_canvas"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp">
 
