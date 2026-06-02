@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Phone Search Web — Figma 768:14132 (412×914)
+    Source: tJamKVuAm0fELLoddNqQ9A / 移动端首页改版
+    Trigger: 搜索"搜全网" tab active + keyboard open
+    Layout stacking (top→bottom):
+      status bar 36dp + header 48dp = 84dp fixed
+      NestedScrollView (weight=1): content start top=149 → paddingTop=65dp
+      URL bar 48dp
+      search input card (wrap_content)
+      keyboard placeholder 368dp
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/surface_sunken">
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Status bar reference: 36dp
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <View
+        android:id="@+id/status_bar_spacer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_reference" />
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Header: 48dp — back button only (Figma 768:14136)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="@string/back" />
+    </LinearLayout>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Scrollable content: search suggestions + history
+         paddingTop=65dp so first content starts at Figma top=149
+         (header bottom=84dp, content top=149dp → 149-84=65dp)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="65dp"
+            android:paddingBottom="16dp">
+
+            <!-- ── 搜索推荐 section (Figma 768:14254) ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header row: 搜索推荐 · eye · refresh / 热搜榜 · arrow -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Left: label + eye + refresh (gap 12dp between each) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="搜索推荐"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="14sp" />
+
+                        <!-- Eye icon (眼睛_eyes, 768:14259) gap=12dp -->
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_search_eye"
+                            android:contentDescription="@null" />
+
+                        <!-- Refresh icon (768:14265) gap=12dp -->
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_search_refresh"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+
+                    <!-- Right: 热搜榜 + arrow -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="热搜榜"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_search_arrow_right"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Hot search chips: 2-column grid, gap 8dp (Figma 768:14273..14280) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="11dp"
+                            android:paddingVertical="8dp"
+                            android:gravity="center_vertical"
+                            android:text="四川推进川菜地方立法"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            android:background="@drawable/bg_search_chip"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="13dp"
+                            android:paddingVertical="8dp"
+                            android:gravity="center_vertical"
+                            android:text="张颂文新剧《猎冰》..."
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            android:background="@drawable/bg_search_chip"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="10dp"
+                            android:paddingVertical="8dp"
+                            android:gravity="center_vertical"
+                            android:text="假期推荐的10个好地..."
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            android:background="@drawable/bg_search_chip"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="13dp"
+                            android:paddingVertical="8dp"
+                            android:gravity="center_vertical"
+                            android:text="有关部门调查秦朗丢..."
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            android:background="@drawable/bg_search_chip"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── 输入历史 section (Figma 768:14281) gap-above=24dp ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <!-- Header row: 输入历史 / delete icon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="输入历史"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_search_delete"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <!--
+                    History chips — Figma 768:14293: flex-wrap, gap=8dp
+                    Android does not have a native FlowLayout; approximate with
+                    two rows matching the Figma static layout (6 chips, 2 rows)
+                    Row 1: 成都 · www.qq.com · 成都今天下雪了吗... · 杭
+                    Row 2: 谷爱凌 · 成都天气预报
+                -->
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <!-- 成都 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:text="成都"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:background="@drawable/bg_search_chip" />
+
+                    <!-- www.qq.com — icon + text chip (Figma 768:14296) -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="18dp"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="9dp"
+                        android:background="@drawable/bg_search_chip">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_web_icon"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="www.qq.com"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- 成都今天下雪了吗... -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:text="成都今天下雪了吗..."
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:background="@drawable/bg_search_chip" />
+
+                    <!-- 杭 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:text="杭"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:background="@drawable/bg_search_chip" />
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <!-- 谷爱凌 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:text="谷爱凌"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:background="@drawable/bg_search_chip" />
+
+                    <!-- 成都天气预报 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:text="成都天气预报"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:background="@drawable/bg_search_chip" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         URL bar — 48dp, bg white (Figma 768:14138 top=498)
+         px=16dp, contains www. / . .com .cn segments + domain switcher
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:background="@color/surface_canvas">
+
+        <!-- Domain path segments with dividers -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="www."
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="/"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="."
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=".com"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+
+            <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
+                android:background="@color/text_disabled" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=".cn"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Domain switcher (58×12dp, Figma 768:14149) -->
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="12dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_domain_switcher"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Search input card (Figma 768:14157/14158)
+         bg white, border 1dp #333, rounded 16dp, px=16dp py=8dp
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface_canvas"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_search_card_filled"
+            android:padding="12dp">
+
+            <!-- Input area: cursor + placeholder (Figma 768:14177) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="2dp">
+
+                <!-- Text cursor (2×21dp) -->
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="21dp"
+                    android:background="@color/text_disabled" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="2dp"
+                    android:text="请输入文本发起搜索"
+                    android:textColor="@color/text_placeholder"
+                    android:textSize="14sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Spacer 24dp -->
+            <View android:layout_width="0dp" android:layout_height="24dp" />
+
+            <!-- Toolbar row: model switch left, camera + voice right (Figma 768:14210) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Model selector: Baidu icon + dropdown arrow, border 0.5dp (768:14223) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="4dp"
+                        android:background="@drawable/bg_model_selector">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_baidu_logo"
+                            android:contentDescription="@null" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_dropdown_arrow"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Camera + voice (28dp each, gap 16dp, Figma 768:14237) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:padding="2dp"
+                        android:src="@drawable/search_camera"
+                        android:contentDescription="@string/camera" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:padding="2dp"
+                        android:src="@drawable/search_microphone"
+                        android:contentDescription="@string/voice" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Keyboard placeholder — 368dp (Figma 82:3489)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+        android:background="@color/fill_quaternary" />
+
+</LinearLayout>
