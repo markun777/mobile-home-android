@@ -156,7 +156,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="32dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                             android:paddingStart="8dp"
                             android:paddingEnd="11dp"
                             android:paddingVertical="8dp"
@@ -170,7 +171,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="32dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                             android:layout_marginTop="8dp"
                             android:paddingStart="8dp"
                             android:paddingEnd="13dp"
@@ -193,7 +195,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="32dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                             android:paddingStart="8dp"
                             android:paddingEnd="10dp"
                             android:paddingVertical="8dp"
@@ -207,7 +210,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="32dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                             android:layout_marginTop="8dp"
                             android:paddingStart="8dp"
                             android:paddingEnd="13dp"
@@ -269,7 +273,8 @@
                     <!-- 成都 -->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="10dp"
                         android:gravity="center_vertical"
@@ -281,7 +286,7 @@
                     <!-- www.qq.com — icon + text chip (Figma 768:14296) -->
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:gravity="center_vertical"
                         android:paddingStart="8dp"
@@ -308,7 +313,8 @@
                     <!-- 成都今天下雪了吗... -->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                         android:layout_marginStart="8dp"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="10dp"
@@ -321,7 +327,8 @@
                     <!-- 杭 -->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                         android:layout_marginStart="8dp"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="10dp"
@@ -342,7 +349,8 @@
                     <!-- 谷爱凌 -->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="10dp"
                         android:gravity="center_vertical"
@@ -354,7 +362,8 @@
                     <!-- 成都天气预报 -->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="wrap_content"
+                            android:minHeight="32dp"
                         android:layout_marginStart="8dp"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="10dp"
