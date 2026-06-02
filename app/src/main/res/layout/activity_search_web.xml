@@ -557,11 +557,14 @@
     </LinearLayout>
 
     <!-- ═══════════════════════════════════════════════════════════════════════
-         Keyboard placeholder — 368dp (Figma 82:3489)
+         Keyboard — 368dp (Figma 82:3489, Screenshot_20230920-134817)
+         Full Android keyboard screenshot, cropped to keyboard portion
          ═══════════════════════════════════════════════════════════════════════ -->
-    <View
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="368dp"
-        android:background="@color/fill_quaternary" />
+        android:src="@drawable/bg_keyboard"
+        android:scaleType="fitXY"
+        android:contentDescription="@null" />
 
 </LinearLayout>
