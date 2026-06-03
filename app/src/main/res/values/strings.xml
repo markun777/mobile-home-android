@@ -45,4 +45,15 @@
     <string name="history">历史记录</string>
     <string name="camera">相机</string>
     <string name="voice">语音</string>
+
+    <!-- Search web screen — Figma 768:14132 -->
+    <string name="search_input_hint">请输入文本发起搜索</string>
+    <string name="section_search_suggestions">搜索推荐</string>
+    <string name="section_hot_search">热搜榜</string>
+    <string name="section_search_history">输入历史</string>
+    <string name="url_www">www.</string>
+    <string name="url_slash">/</string>
+    <string name="url_dot">.</string>
+    <string name="url_com">.com</string>
+    <string name="url_cn">.cn</string>
 </resources>
