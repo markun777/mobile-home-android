@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Phone Search Web — Figma 768:14132 (412×914)
-    Source: tJamKVuAm0fELLoddNqQ9A / 移动端首页改版
--->
+<!-- Phone Search Web — Figma 768:14132 (412×914) -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/surface_sunken">
 
-    <!-- Status bar spacer — 36dp Figma reference -->
     <View
         android:id="@+id/status_bar_spacer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/status_bar_reference" />
 
-    <!-- Header 48dp — back button (Figma 768:14136) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -38,7 +33,6 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Scrollable content: suggestions + history (Figma 768:14253/14281) -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_content"
         android:layout_width="match_parent"
@@ -55,13 +49,12 @@
             android:paddingBottom="16dp"
             android:gravity="bottom">
 
-            <!-- 搜索推荐 (Figma 768:14254) -->
+            <!-- 搜索推荐 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Header: label + eye + refresh | 热搜榜 + arrow -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -75,25 +68,16 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/text_tertiary"
-                            android:textSize="14sp"
-                            android:text="@string/section_search_suggestions" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_tertiary" android:textSize="14sp"
+                            android:text="搜索推荐" />
 
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_marginStart="12dp"
-                            android:src="@drawable/ic_search_eye"
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:layout_marginStart="12dp" android:src="@drawable/ic_search_eye"
                             android:contentDescription="@null" />
 
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_marginStart="12dp"
-                            android:src="@drawable/ic_search_refresh"
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:layout_marginStart="12dp" android:src="@drawable/ic_search_refresh"
                             android:contentDescription="@null" />
                     </LinearLayout>
 
@@ -103,214 +87,140 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/text_primary"
-                            android:textSize="12sp"
-                            android:text="@string/section_hot_search" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="12sp"
+                            android:text="热搜榜" />
 
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_search_arrow_right"
-                            android:contentDescription="@null" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_search_arrow_right" android:contentDescription="@null" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Hot search chip grid: 2 columns, gap 8dp -->
+                <!-- 2-column chip grid, gap 8dp -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
-                    <!-- Left column -->
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="4dp"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="4dp"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="32dp"
-                            android:paddingStart="12dp"
-                            android:paddingEnd="11dp"
-                            android:gravity="center"
-                            android:textColor="@color/text_primary"
-                            android:textSize="12sp"
+                        <TextView android:layout_width="match_parent" android:layout_height="32dp"
+                            android:paddingStart="12dp" android:paddingEnd="11dp"
+                            android:gravity="center" android:textColor="@color/text_primary"
+                            android:textSize="12sp" android:text="四川推进川菜地方立法"
                             android:background="@drawable/bg_search_chip"
-                            android:singleLine="true"
-                            android:ellipsize="end" />
+                            android:singleLine="true" android:ellipsize="end" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="8dp"
-                            android:paddingStart="12dp"
-                            android:paddingEnd="13dp"
-                            android:gravity="center"
-                            android:textColor="@color/text_primary"
-                            android:textSize="12sp"
-                            android:background="@drawable/bg_search_chip"
-                            android:singleLine="true"
-                            android:ellipsize="end" />
+                        <TextView android:layout_width="match_parent" android:layout_height="32dp"
+                            android:layout_marginTop="8dp" android:paddingStart="12dp"
+                            android:paddingEnd="13dp" android:gravity="center"
+                            android:textColor="@color/text_primary" android:textSize="12sp"
+                            android:text="张颂文新剧《猎冰》..." android:background="@drawable/bg_search_chip"
+                            android:singleLine="true" android:ellipsize="end" />
                     </LinearLayout>
 
-                    <!-- Right column -->
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="4dp"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="4dp"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="32dp"
-                            android:paddingStart="12dp"
-                            android:paddingEnd="10dp"
-                            android:gravity="center"
-                            android:textColor="@color/text_primary"
-                            android:textSize="12sp"
+                        <TextView android:layout_width="match_parent" android:layout_height="32dp"
+                            android:paddingStart="12dp" android:paddingEnd="10dp"
+                            android:gravity="center" android:textColor="@color/text_primary"
+                            android:textSize="12sp" android:text="假期推荐的10个好地..."
                             android:background="@drawable/bg_search_chip"
-                            android:singleLine="true"
-                            android:ellipsize="end" />
+                            android:singleLine="true" android:ellipsize="end" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="8dp"
-                            android:paddingStart="12dp"
-                            android:paddingEnd="13dp"
-                            android:gravity="center"
-                            android:textColor="@color/text_primary"
-                            android:textSize="12sp"
-                            android:background="@drawable/bg_search_chip"
-                            android:singleLine="true"
-                            android:ellipsize="end" />
+                        <TextView android:layout_width="match_parent" android:layout_height="32dp"
+                            android:layout_marginTop="8dp" android:paddingStart="12dp"
+                            android:paddingEnd="13dp" android:gravity="center"
+                            android:textColor="@color/text_primary" android:textSize="12sp"
+                            android:text="有关部门调查秦朗丢..." android:background="@drawable/bg_search_chip"
+                            android:singleLine="true" android:ellipsize="end" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- 输入历史 (Figma 768:14281) -->
+            <!-- 输入历史 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical">
 
-                <!-- Header: label / delete -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/text_tertiary"
-                        android:textSize="14sp"
-                        android:text="@string/section_search_history" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:textColor="@color/text_tertiary"
+                        android:textSize="14sp" android:text="输入历史" />
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_search_delete"
-                        android:contentDescription="@null" />
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                        android:src="@drawable/ic_search_delete" android:contentDescription="@null" />
                 </LinearLayout>
 
-                <!-- History chips row 1 -->
+                <!-- Row 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:paddingHorizontal="12dp"
-                        android:gravity="center"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
-                        android:background="@drawable/bg_search_chip" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:paddingHorizontal="12dp" android:gravity="center"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:text="成都" android:background="@drawable/bg_search_chip" />
 
-                    <!-- URL chip with icon (Figma 768:14296) -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center_vertical"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="18dp"
-                        android:paddingTop="7dp"
-                        android:paddingBottom="9dp"
-                        android:background="@drawable/bg_search_chip">
+                    <!-- URL chip with globe icon -->
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp" android:gravity="center_vertical"
+                        android:paddingStart="8dp" android:paddingEnd="18dp" android:paddingTop="7dp"
+                        android:paddingBottom="9dp" android:background="@drawable/bg_search_chip">
 
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_web_icon"
-                            android:contentDescription="@null" />
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_web_icon" android:contentDescription="@null" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:textColor="@color/text_primary"
-                            android:textSize="12sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp" android:textColor="@color/text_primary"
+                            android:textSize="12sp" android:text="www.qq.com" />
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:layout_marginStart="8dp"
-                        android:paddingHorizontal="12dp"
-                        android:gravity="center"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
+                    <TextView android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:layout_marginStart="8dp" android:paddingHorizontal="12dp"
+                        android:gravity="center" android:textColor="@color/text_primary"
+                        android:textSize="12sp" android:text="成都今天下雪了吗..."
                         android:background="@drawable/bg_search_chip" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:layout_marginStart="8dp"
-                        android:paddingHorizontal="12dp"
-                        android:gravity="center"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
+                    <TextView android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:layout_marginStart="8dp" android:paddingHorizontal="12dp"
+                        android:gravity="center" android:textColor="@color/text_primary"
+                        android:textSize="12sp" android:text="杭"
                         android:background="@drawable/bg_search_chip" />
                 </LinearLayout>
 
-                <!-- History chips row 2 -->
+                <!-- Row 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:paddingHorizontal="12dp"
-                        android:gravity="center"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
-                        android:background="@drawable/bg_search_chip" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:paddingHorizontal="12dp" android:gravity="center"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:text="谷爱凌" android:background="@drawable/bg_search_chip" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:layout_marginStart="8dp"
-                        android:paddingHorizontal="12dp"
-                        android:gravity="center"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
+                    <TextView android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:layout_marginStart="8dp" android:paddingHorizontal="12dp"
+                        android:gravity="center" android:textColor="@color/text_primary"
+                        android:textSize="12sp" android:text="成都天气预报"
                         android:background="@drawable/bg_search_chip" />
                 </LinearLayout>
             </LinearLayout>
@@ -318,7 +228,7 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Search input card (Figma 768:14157/14158) -->
+    <!-- Search input card -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -337,6 +247,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:hint="请输入文本发起搜索"
                 android:textColorHint="@color/text_placeholder"
                 android:textColor="@color/text_primary"
                 android:textSize="14sp"
@@ -344,66 +255,44 @@
                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:inputType="text"
-                android:imeOptions="actionSearch"
-                android:hint="@string/search_input_hint" />
+                android:imeOptions="actionSearch" />
 
             <View android:layout_width="match_parent" android:layout_height="24dp" />
 
-            <!-- Toolbar: model switch + camera + voice -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <!-- Model selector chip -->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
+                    android:layout_width="0dp" android:layout_height="match_parent"
+                    android:layout_weight="1" android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="28dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="4dp"
-                        android:background="@drawable/bg_model_selector">
+                        android:layout_width="wrap_content" android:layout_height="28dp"
+                        android:gravity="center_vertical" android:orientation="horizontal"
+                        android:paddingHorizontal="4dp" android:background="@drawable/bg_model_selector">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_baidu_logo"
-                            android:contentDescription="@null" />
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_baidu_logo" android:contentDescription="@null" />
 
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_dropdown_arrow"
-                            android:contentDescription="@null" />
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_dropdown_arrow" android:contentDescription="@null" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:gravity="center_vertical" android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:padding="2dp"
-                        android:src="@drawable/search_camera"
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                        android:padding="2dp" android:src="@drawable/search_camera"
                         android:contentDescription="@string/camera" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_marginStart="16dp"
-                        android:padding="2dp"
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                        android:layout_marginStart="16dp" android:padding="2dp"
                         android:src="@drawable/search_microphone"
                         android:contentDescription="@string/voice" />
                 </LinearLayout>
@@ -411,7 +300,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- URL bar (Figma 768:14138) -->
+    <!-- URL bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -421,69 +310,44 @@
         android:background="@color/surface_canvas">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp"
-                android:text="@string/url_www" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/text_primary" android:textSize="12sp" android:text="www." />
 
             <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
                 android:background="@color/text_disabled" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp"
-                android:text="@string/url_slash" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="16dp" android:textColor="@color/text_primary"
+                android:textSize="12sp" android:text="/" />
 
             <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
                 android:background="@color/text_disabled" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp"
-                android:text="@string/url_dot" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="16dp" android:textColor="@color/text_primary"
+                android:textSize="12sp" android:text="." />
 
             <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
                 android:background="@color/text_disabled" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp"
-                android:text="@string/url_com" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="16dp" android:textColor="@color/text_primary"
+                android:textSize="12sp" android:text=".com" />
 
             <View android:layout_width="1dp" android:layout_height="12dp" android:layout_marginStart="16dp"
                 android:background="@color/text_disabled" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp"
-                android:text="@string/url_cn" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="16dp" android:textColor="@color/text_primary"
+                android:textSize="12sp" android:text=".cn" />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="58dp"
-            android:layout_height="12dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/ic_domain_switcher"
+        <ImageView android:layout_width="58dp" android:layout_height="12dp"
+            android:scaleType="fitStart" android:src="@drawable/ic_domain_switcher"
             android:contentDescription="@null" />
     </LinearLayout>
 
