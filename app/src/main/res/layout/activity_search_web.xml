@@ -34,7 +34,7 @@
         android:layout_height="48dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="8dp"
+        android:paddingStart="12dp"
         android:paddingEnd="8dp">
 
         <FrameLayout
@@ -158,7 +158,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="32dp"
-                            android:paddingStart="8dp"
+                            android:paddingStart="12dp"
                             android:paddingEnd="11dp"
                             android:gravity="center"
                             android:text="四川推进川菜地方立法"
@@ -173,7 +173,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="32dp"
                             android:layout_marginTop="8dp"
-                            android:paddingStart="8dp"
+                            android:paddingStart="12dp"
                             android:paddingEnd="13dp"
                             android:gravity="center"
                             android:text="张颂文新剧《猎冰》..."
@@ -195,7 +195,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="32dp"
-                            android:paddingStart="8dp"
+                            android:paddingStart="12dp"
                             android:paddingEnd="10dp"
                             android:gravity="center"
                             android:text="假期推荐的10个好地..."
@@ -210,7 +210,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="32dp"
                             android:layout_marginTop="8dp"
-                            android:paddingStart="8dp"
+                            android:paddingStart="12dp"
                             android:paddingEnd="13dp"
                             android:gravity="center"
                             android:text="有关部门调查秦朗丢..."
