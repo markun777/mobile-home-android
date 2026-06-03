@@ -117,15 +117,30 @@ Last updated: `2026-06-01`
 | Board | Node | Preview Status | Formal XML Delivery |
 |---|---|---|---|
 | Phone home default | `571:44695` | retired | ✅ **active, updated, built, emulator verified** |
+| Phone Search Web | `768:14132` | — | ✅ **XML delivered, build + emulator verified** (2026-06-02) |
 | Phone Ask AI | `571:46559` | retired | parked; XML/resources retained, not current entry point |
 | Pad home default | `91:5128` | retired | deferred to separate thread/branch |
 
+## Phone Search Web 768:14132 (2026-06-03)
+
+| Deliverable | Status | Notes |
+|---|---|---|
+| `activity_search_web.xml` | ✅ delivered | status-bar 36dp, header 48dp, NestedScrollView(fillViewport + gravity=bottom), input card, URL bar |
+| `SearchWebActivity.kt` | ✅ delivered | adjustNothing + WindowInsetsCompat IME handling, keyboard on create |
+| `MainActivity.kt` | ✅ updated | searchCard click → SearchWebActivity intent |
+| `AndroidManifest.xml` | ✅ updated | SearchWebActivity registered |
+| Icons (vector) | ✅ delivered | ic_search_eye/refresh/delete/arrow_right, ic_domain_switcher, ic_dropdown_arrow — all Figma-exported |
+| Icons (PNG) | ✅ delivered | search_camera/microphone, ic_baidu_logo, ic_web_icon — hdpi/xhdpi/xxhdpi + mdpi |
+| Keyboard | ✅ system IME | adjustNothing + WindowInsetsCompat, no placeholder |
+| Chip spacing | ✅ Figma-aligned | pl-[12px], col gap 8dp, chip h 32dp + gravity center |
+| PaddingHorizontal scroll | 12dp | Per designer review |
+
 ## Migration Sequence
 
-1. Continue Phone home pages/states from Figma `571:44695`; record any
-   pixel/geometry drift and native render evidence.
-2. Keep Ask AI parked until Phone home is accepted for the next state.
-3. Keep Pad out of this thread; start a separate branch/thread from `91:5128`.
+1. Continue Phone home pages/states from Figma `571:44695`; record any pixel/geometry drift and native render evidence.
+2. Phone Search Web `768:14132` delivered — next: polish per designer feedback.
+3. Keep Ask AI parked until Phone home is accepted for the next state.
+4. Keep Pad out of this thread; start a separate branch/thread from `91:5128`.
 
 ## Token Source Policy
 
