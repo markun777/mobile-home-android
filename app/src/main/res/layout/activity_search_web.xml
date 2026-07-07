@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="12dp"
+            android:paddingHorizontal="16dp"
             android:paddingBottom="16dp"
             android:gravity="bottom">
 
@@ -110,14 +110,14 @@
 
                         <TextView android:layout_width="match_parent" android:layout_height="32dp"
                             android:paddingStart="12dp" android:paddingEnd="11dp"
-                            android:gravity="center" android:textColor="@color/text_primary"
+                            android:gravity="start|center_vertical" android:textColor="@color/text_primary"
                             android:textSize="12sp" android:text="四川推进川菜地方立法"
                             android:background="@drawable/bg_search_chip"
                             android:singleLine="true" android:ellipsize="end" />
 
                         <TextView android:layout_width="match_parent" android:layout_height="32dp"
                             android:layout_marginTop="8dp" android:paddingStart="12dp"
-                            android:paddingEnd="13dp" android:gravity="center"
+                            android:paddingEnd="13dp" android:gravity="start|center_vertical"
                             android:textColor="@color/text_primary" android:textSize="12sp"
                             android:text="张颂文新剧《猎冰》..." android:background="@drawable/bg_search_chip"
                             android:singleLine="true" android:ellipsize="end" />
@@ -130,14 +130,14 @@
 
                         <TextView android:layout_width="match_parent" android:layout_height="32dp"
                             android:paddingStart="12dp" android:paddingEnd="10dp"
-                            android:gravity="center" android:textColor="@color/text_primary"
+                            android:gravity="start|center_vertical" android:textColor="@color/text_primary"
                             android:textSize="12sp" android:text="假期推荐的10个好地..."
                             android:background="@drawable/bg_search_chip"
                             android:singleLine="true" android:ellipsize="end" />
 
                         <TextView android:layout_width="match_parent" android:layout_height="32dp"
                             android:layout_marginTop="8dp" android:paddingStart="12dp"
-                            android:paddingEnd="13dp" android:gravity="center"
+                            android:paddingEnd="13dp" android:gravity="start|center_vertical"
                             android:textColor="@color/text_primary" android:textSize="12sp"
                             android:text="有关部门调查秦朗丢..." android:background="@drawable/bg_search_chip"
                             android:singleLine="true" android:ellipsize="end" />
