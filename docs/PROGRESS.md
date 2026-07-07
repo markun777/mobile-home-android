@@ -1,51 +1,151 @@
 # Progress
 
-Last updated: `2026-05-27`
+Last updated: `2026-06-01`
 
 ## Current Status
 
-`Delivery profile switched to Android XML; Expo retained as preview/reference; native migration pending`
+`Phone home XML is the active workstream on branch phone-xml-layout / PR #4. Ask AI is parked; Pad is deferred to a separate thread. Native Android emulator evidence is canonical.`
 
 ## Decision Sync
 
 - The receiving team requires Android XML delivery.
-- Formal implementation is now defined as Kotlin + Android Views/XML
-  resources in this repository.
-- The existing React Native + Expo SDK 56 Phone screen is preserved only as a
-  rapid visual preview/reference and must not be represented as mergeable XML
-  product code.
-- `Browser Color System v3.0` remains the only active design/token baseline
-  for both Phone and Pad.
+- Formal implementation is now defined as Kotlin + Android Views/XML resources.
+- The earlier Expo preview/scaffold has been removed from this repository.
+- `MainActivity` launches Phone home; Ask AI XML/resources remain parked and
+  are not the active entry point.
+- Pad remains a separate future branch/thread because it is an independent
+  composition, not a stretched Phone layout.
+- `Browser Color System v3.0` is the canonical token baseline.
 
-## Completed Evidence Retained
+## Completed Evidence Retained (Phase 1)
 
-- Phone source board is mapped to Figma node `85:3451`.
-- Pad source board is mapped to Figma node `91:5128` as an independent
-  composition.
-- Existing Expo Phone preview wires exported assets and v3.0 mappings.
-- Expo web export previously succeeded as preview/bundle evidence only.
+- Phone source board mapped to Figma node `85:3451` (content feed variant, not browser homepage).
+- Pad source board mapped to Figma node `91:5128` (independent composition).
+- Expo Phone preview existed historically with v3.0 token mappings; it is now
+  retired after the XML delivery transition.
+- Expo web export previously succeeded, but it is no longer an acceptance path.
+
+## Completed — Migration Phase 2 (Token Resources) ✅
+
+| Step | Status | Notes |
+|---|---|---|
+| 1. Preview isolation/retirement | ✅ done | Expo scaffold and preview files removed; root now represents native XML delivery |
+| 2. Native Android scaffold (`app/`) | ✅ done | Kotlin + Gradle, compileSdk 35, minSdk 26 |
+| 3. **v3.0 semantic tokens → Android resource XML** | ✅ **done** | Light + Dark `colors.xml` with Figma variable annotations |
+| 4. Spacing tokens (`dimens.xml`) | ✅ done | From Figma `间距` collection + layout constants |
+| 5. Dark theme (`values-night/themes.xml`) | ✅ done | `windowLightStatusBar`=false for dark mode |
+| 6. Drawable resources (tab bg, engine bg) | ✅ done | `bg_search_mode_tab`, `bg_tab_active`, `bg_engine_selector` |
+| 7. Asset packaging → `res/drawable/` | ✅ done | 11 PNGs copied from `assets/` |
+| 8. `TOKEN_SNAPSHOT.md` updated | ✅ done | Full Figma→Android resource mapping table |
+
+## Completed — Migration Phase 3 (Phone Home XML Layout) ✅
+
+| Step | Status | Notes |
+|---|---|---|
+| 1. Copy shortcut tile assets to `res/drawable/` | ✅ done | 12 shortcut PNGs + `nav_bookmarks.png` |
+| 2. Rewrite `activity_main.xml` | ✅ done | Full Figma 85:3451 design with search card (mode tab, engine, camera/voice), 5×3 shortcut grid, bottom nav + system bar |
+| 3. Nav handle drawable | ✅ done | `bg_nav_handle.xml` — rounded pill, `platform_nav_handle` color |
+| 4. Shortcut labels in `strings.xml` | ✅ done | 12 Chinese labels added |
+| 5. Resource reference audit | ✅ done | All 57 `@color`/`@dimen`/`@drawable`/`@string` references verified |
+
+## Completed — Phase 4 (Label Correction + HTML Preview Verification) ✅
+
+| Step | Status | Notes |
+|---|---|---|
+| Shortcut label audit vs Figma 85:3451 | ✅ done | 4 labels corrected: 历史→历史记录, 精选→网址精选, 游戏→小游戏, 小说→免费小说 |
+| `strings.xml` updated | ✅ done | All 12 shortcut labels now match Figma node text |
+| `xml-preview.html` updated | ✅ done | Historical preview artifact; later retired during native-only cleanup |
+| HTML preview screenshot | ✅ done | Historical evidence; superseded by native emulator screenshots under `android-vm/screenshots/` |
+
+## Completed — Build And Emulator Verification ✅
+
+| Step | Status | Evidence |
+|---|---|---|
+| Gradle wrapper | ✅ done | `gradlew`, `gradlew.bat`, `gradle/wrapper/*` committed; wrapper uses Gradle `8.9` with extended network timeout |
+| Gradle properties | ✅ done | `android.useAndroidX=true`, `org.gradle.java.home=/opt/homebrew/opt/openjdk@17` |
+| Native build | ✅ done | `./gradlew assembleDebug` passed with JDK `17.0.19`, Android SDK platform `android-35`, build tools `34.0.0` |
+| APK output | ✅ done | `app/build/outputs/apk/debug/app-debug.apk` generated locally |
+| Emulator install/render | ✅ done | Installed and launched `com.lenovo.mobilehome/.MainActivity` on `MobileHomePhone_API35` |
+| Device profile | ✅ done | `1080 x 2340`, density `440` |
+| Screenshot evidence | ✅ done | `android-vm/screenshots/android-emulator-phone-default.png` |
+
+## Completed — Phase 5 (Figma 571:44695 Update) ✅
+
+| Step | Status | Notes |
+|---|---|---|
+| Bottom nav icon+label | ✅ done | 主页/资讯/视频/小说/菜单，LinearLayout vertical per tab |
+| Tab manager button | ✅ done | Top-right 28×28dp, `ic_tab_manager` drawable |
+| Search placeholder update | ✅ done | 告诉我想要了解的内容 → 输入关键信息 |
+| AI tab label update | ✅ done | 问AI → AI搜索 |
+| Search card resize | ✅ done | 380dp wide (16dp margin), stroke 1dp, input 50dp/14sp |
+| Shortcut grid reorder + 短剧 | ✅ done | Row1: 书签/历史记录/免费小说/短剧/小游戏 |
+| Engine selector removed | ✅ done | Toolbar simplified to mode tab + camera/voice |
+| New drawables | ✅ done | ic_nav_home/news/video/novel/menu, ic_tab_manager, nav_home_v2, nav_news, shortcut_drama, tab_manager_bg/icon |
+| Commit + push | ✅ done | `8705764` on `phone-xml-layout` |
+
+## Completed — Stable Android Toolchain Migration + Reverification ✅
+
+| Step | Status | Evidence |
+|---|---|---|
+| Stable SDK path | ✅ done | `/Users/markun/Library/Android/sdk` |
+| Stable AVD path | ✅ done | `/Users/markun/Library/Android/avd/MobileHomePhone_API35.avd` |
+| commandline-tools | ✅ done | Replaced incomplete `sdkmanager` with full `cmdline-tools;latest` |
+| platform-tools | ✅ done | Installed official `platform-tools` `37.0.0` with package metadata |
+| emulator | ✅ done | Installed official arm64 emulator `36.5.11` (`emulator-darwin_aarch64-15261927.zip`) |
+| system image | ✅ done | Installed Android 35 Google APIs `arm64-v8a` revision `9` (`3.8G`) |
+| AVD recreation | ✅ done | `MobileHomePhone_API35`, Pixel 5 profile, `1080 x 2340`, density `440` |
+| Native build | ✅ done | `./gradlew --no-daemon --console=plain assembleDebug` passes |
+| Resource fix | ✅ done | Replaced invalid SVG/`<line>` drawables with Android `vector` resources |
+| Emulator install/render | ✅ done | APK installed and `com.lenovo.mobilehome/.MainActivity` launched |
+| Screenshot evidence | ✅ done | `android-vm/screenshots/android-emulator-phone-57144695.png` |
+
+## Current Workstream Alignment
+
+| Item | Status | Notes |
+|---|---|---|
+| Active branch | `phone-xml-layout` | Tracks `origin/phone-xml-layout` and PR #4 |
+| Active PR | #4 | `Phone home XML layout — stable Android toolchain verified` |
+| App entry point | Phone home | `MainActivity` uses `ActivityMainBinding` |
+| Ask AI | Parked | `activity_ask_ai.xml` and assets are retained, but not launched |
+| Pad | Deferred | Open a separate thread/branch for `91:5128` |
+| Historical branches | Behind | `codex/phone-xml-build-fix` and `codex/xml-delivery-transition` are superseded by PR #4/main decisions |
+| Scope-sync build | ✅ passed | `./gradlew --no-daemon --console=plain assembleDebug` after returning app entry to Phone home |
+| Phone shortcut assets | ✅ synced | 36dp base plus hdpi/xhdpi/xxhdpi density variants for `shortcut_*` tiles |
 
 ## Board Status
 
-| Board | Node | Expo Preview | Formal XML Delivery |
+| Board | Node | Preview Status | Formal XML Delivery |
 |---|---|---|---|
-| Phone home default | `85:3451` | reference implementation exists | not started |
-| Phone Ask AI | `91:4404` | deferred | blocked until XML default verification |
-| Pad home default | `91:5128` | deferred | independent composition pending |
+| Phone home default | `571:44695` | retired | ✅ **active, updated, built, emulator verified** |
+| Phone Search Web | `768:14132` | — | ✅ **XML delivered, build + emulator verified** (2026-06-02) |
+| Phone Ask AI | `571:46559` | retired | parked; XML/resources retained, not current entry point |
+| Pad home default | `91:5128` | retired | deferred to separate thread/branch |
+
+## Phone Search Web 768:14132 (2026-06-03)
+
+| Deliverable | Status | Notes |
+|---|---|---|
+| `activity_search_web.xml` | ✅ delivered | status-bar 36dp, header 48dp, NestedScrollView(fillViewport + gravity=bottom), input card, URL bar |
+| `SearchWebActivity.kt` | ✅ delivered | adjustNothing + WindowInsetsCompat IME handling, keyboard on create |
+| `MainActivity.kt` | ✅ updated | searchCard click → SearchWebActivity intent |
+| `AndroidManifest.xml` | ✅ updated | SearchWebActivity registered |
+| Icons (vector) | ✅ delivered | ic_search_eye/refresh/delete/arrow_right, ic_domain_switcher, ic_dropdown_arrow — all Figma-exported |
+| Icons (PNG) | ✅ delivered | search_camera/microphone, ic_baidu_logo, ic_web_icon — hdpi/xhdpi/xxhdpi + mdpi |
+| Keyboard | ✅ system IME | adjustNothing + WindowInsetsCompat, no placeholder |
+| Chip spacing | ✅ Figma-aligned | pl-[12px], col gap 8dp, chip h 32dp + gravity center |
+| PaddingHorizontal scroll | 12dp | Per designer review |
 
 ## Migration Sequence
 
-1. Isolate the existing Expo implementation under `preview/expo/` without
-   discarding its preview evidence.
-2. Create the native Android Views/XML application structure in the same
-   repository.
-3. Convert the v3.0 semantic contract to Android resource XML and document any
-   exception.
-4. Package existing design assets for native Android resource resolution.
-5. Implement and verify the Phone default XML board on a named emulator/device.
-6. Begin Ask AI or Pad only after Phone XML evidence is recorded.
+1. Continue Phone home pages/states from Figma `571:44695`; record any pixel/geometry drift and native render evidence.
+2. Phone Search Web `768:14132` delivered — next: polish per designer feedback.
+3. Keep Ask AI parked until Phone home is accepted for the next state.
+4. Keep Pad out of this thread; start a separate branch/thread from `91:5128`.
 
-## Next Gate
+## Token Source Policy
 
-Create the native XML delivery scaffold and token resource mapping while
-keeping the Expo preview clearly separated from formal acceptance evidence.
+- Figma variable collection `浏览器色彩 / Browser Color v3.0` is the **single source of truth**.
+- Android `res/values/colors.xml` and `res/values-night/colors.xml` are the **formal delivery mappings**.
+- Expo `src/theme/tokens.js` has been removed with the retired preview.
+- Each `colors.xml` entry is annotated with its canonical Figma variable name.
+- Do not edit values directly without updating the Figma variable first.

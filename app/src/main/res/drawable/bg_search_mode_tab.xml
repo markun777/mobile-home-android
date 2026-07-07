@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Search mode tab background: fill_quinary rounded container -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/radius_tab" />
+    <solid android:color="@color/fill_quinary" />
+</shape>

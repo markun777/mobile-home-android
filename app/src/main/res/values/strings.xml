@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">联想浏览器</string>
+    <string name="search_placeholder">输入关键信息</string>
+    <string name="search_web">搜全网</string>
+    <string name="ask_ai">AI搜索</string>
+
+    <!-- Bottom nav labels — Figma 571:44695 -->
+    <string name="nav_home">主页</string>
+    <string name="nav_recommend">推荐</string>
+    <string name="nav_video">视频</string>
+    <string name="nav_novel">小说</string>
+    <string name="nav_menu">菜单</string>
+
+    <!-- Tab manager -->
+    <string name="tab_count">1</string>
+
+    <!-- Shortcut labels — Figma 571:44695 grid order -->
+    <string name="shortcut_bookmarks">书签</string>
+    <string name="shortcut_history">历史记录</string>
+    <string name="shortcut_novel">免费小说</string>
+    <string name="shortcut_drama">短剧</string>
+    <string name="shortcut_games">小游戏</string>
+    <string name="shortcut_curated">网址精选</string>
+    <string name="shortcut_weibo">微博</string>
+    <string name="shortcut_baidu">百度</string>
+    <string name="shortcut_iqiyi">爱奇艺</string>
+    <string name="shortcut_youku">优酷</string>
+    <string name="shortcut_zhihu">知乎</string>
+    <string name="shortcut_jd">京东</string>
+    <string name="shortcut_add">添加</string>
+
+    <!-- Ask AI screen — Figma 571:46559 -->
+    <string name="ai_assistant">AI助手</string>
+    <string name="ask_ai_hero_title">Hi，\n有什么可以帮到你？</string>
+    <string name="ask_ai_hero_subtitle">论文润色、热梗创作、问题解答，我一直在你身边</string>
+    <string name="ask_ai_input_hint">你可以问我任何问题</string>
+    <string name="model_name_doubao">豆包</string>
+    <string name="deep_think">深度思考</string>
+    <string name="query_suggestion_1">今日十大热点新闻</string>
+    <string name="query_suggestion_2">帮我整理一个东三省的旅行规划</string>
+    <string name="query_suggestion_3">为什么打喷嚏会传染？</string>
+    <string name="ai_disclaimer">内容由 AI 生成，仅供参考</string>
+    <string name="back">返回</string>
+    <string name="history">历史记录</string>
+    <string name="camera">相机</string>
+    <string name="voice">语音</string>
+
+    <!-- Search web screen — Figma 768:14132 -->
+    <string name="search_input_hint">请输入文本发起搜索</string>
+    <string name="section_search_suggestions">搜索推荐</string>
+    <string name="section_hot_search">热搜榜</string>
+    <string name="section_search_history">输入历史</string>
+    <string name="url_www">www.</string>
+    <string name="url_slash">/</string>
+    <string name="url_dot">.</string>
+    <string name="url_com">.com</string>
+    <string name="url_cn">.cn</string>
+</resources>

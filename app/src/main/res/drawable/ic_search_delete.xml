@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 768:14285 delete/trash icon, exported SVG -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+    <!-- left eraser line -->
+    <path
+        android:pathData="M7.3125,8.375L7.3125,12.875"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+    <!-- right eraser line -->
+    <path
+        android:pathData="M10.6875,8.375L10.6875,12.875"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+    <!-- bin body -->
+    <path
+        android:pathData="M3.375,5L3.375,14.2C3.375,15.1941 4.18089,16 5.175,16L12.575,16C13.5691,16 14.375,15.1941 14.375,14.2L14.375,5"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:fillColor="@android:color/transparent" />
+    <!-- bin lid bottom -->
+    <path
+        android:pathData="M2.25,5L15.75,5"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+    <!-- bin handle -->
+    <path
+        android:pathData="M5,2.5L13,2.5"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+</vector>

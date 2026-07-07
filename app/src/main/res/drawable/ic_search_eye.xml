@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 768:14259 眼睛_eyes, exported SVG -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+    <!-- outer eye outline, fillType=evenOdd from Figma fill-rule -->
+    <path
+        android:pathData="M8.9997,14.8663C13.0144,14.8663 16.2689,11.5055 16.2689,9.21244C16.2689,6.9194 13.0144,3.55859 8.9997,3.55859C4.98502,3.55859 1.73047,6.92174 1.73047,9.21244C1.73047,11.5031 4.98502,14.8663 8.9997,14.8663Z"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"
+        android:fillType="evenOdd" />
+    <!-- pupil -->
+    <path
+        android:pathData="M8.99925,11.6352C10.3375,11.6352 11.4223,10.5504 11.4223,9.21214C11.4223,7.87391 10.3375,6.78906 8.99925,6.78906C7.66102,6.78906 6.57617,7.87391 6.57617,9.21214C6.57617,10.5504 7.66102,11.6352 8.99925,11.6352Z"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent" />
+</vector>

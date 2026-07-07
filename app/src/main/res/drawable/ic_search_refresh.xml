@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 768:14264 refresh icon, exported SVG -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+    <!-- curved arrow body -->
+    <path
+        android:pathData="M13.4836,12.5276C12.578,13.6749 11.2346,14.4768 9.66824,14.6612C6.53549,15.0301 3.69687,12.7895 3.32802,9.65673C2.95917,6.52398 5.19976,3.68536 8.33251,3.31651C9.8989,3.13208 11.3917,3.60002 12.5391,4.50566C13.1231,4.96663 14.1782,5.92973 14.1782,5.92973"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent" />
+    <!-- arrow head -->
+    <path
+        android:pathData="M14.7112,3.92188L14.7112,6.77764L11.8555,6.77764"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent" />
+</vector>

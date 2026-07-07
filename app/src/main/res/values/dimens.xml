@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Browser Color System v3.0 — Spacing & Layout Constants
+    Source: Figma 间距 collection + 移动端首页改版 Phone 85:3451
+-->
+<resources>
+
+    <!-- ─── 间距 tokens (Figma 间距 collection) ─────────────────────────── -->
+    <dimen name="spacing_2">2dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_6">6dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_14">14dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_30">30dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_40">40dp</dimen>
+
+    <!-- ─── Corner radius ────────────────────────────────────────────────── -->
+    <dimen name="radius_card">16dp</dimen>
+    <dimen name="radius_tab">8dp</dimen>
+    <dimen name="radius_tab_item">6dp</dimen>
+    <dimen name="radius_engine">8dp</dimen>
+    <dimen name="radius_logo">16dp</dimen>
+    <dimen name="radius_shortcut">8dp</dimen>
+    <dimen name="radius_indicator">40dp</dimen>
+
+    <!-- ─── Layout constants — Phone home 85:3451 (412 x 914) ────────────── -->
+    <dimen name="phone_canvas_width">412dp</dimen>
+    <dimen name="phone_canvas_height">914dp</dimen>
+
+    <!-- Status bar reference height -->
+    <dimen name="status_bar_reference">36dp</dimen>
+
+    <!-- Header background -->
+    <dimen name="header_bg_height">426dp</dimen>
+
+    <!-- Logo -->
+    <dimen name="logo_size">64dp</dimen>
+    <dimen name="logo_margin_top">123dp</dimen>
+
+    <!-- Search card -->
+    <dimen name="search_card_margin_horizontal">24dp</dimen>
+    <dimen name="search_card_margin_top">123dp</dimen>
+    <dimen name="search_card_padding">12dp</dimen>
+    <dimen name="search_card_elevation">2dp</dimen>
+    <dimen name="search_input_height">56dp</dimen>
+    <dimen name="search_toolbar_height">28dp</dimen>
+    <dimen name="search_mode_tab_height">28dp</dimen>
+    <dimen name="search_tab_item_height">24dp</dimen>
+    <dimen name="engine_selector_height">28dp</dimen>
+    <dimen name="search_icon_size">24dp</dimen>
+    <dimen name="engine_dropdown_size">16dp</dimen>
+
+    <!-- Site grid -->
+    <dimen name="grid_margin_horizontal">24dp</dimen>
+    <dimen name="grid_margin_top">32dp</dimen>
+    <dimen name="shortcut_icon_size">36dp</dimen>
+    <dimen name="shortcut_tile_gap">12dp</dimen>
+    <dimen name="grid_row_gap">12dp</dimen>
+
+    <!-- Bottom navigation -->
+    <dimen name="bottom_nav_height">60dp</dimen>
+    <dimen name="bottom_nav_padding_horizontal">24dp</dimen>
+    <dimen name="bottom_nav_padding_top">16dp</dimen>
+    <dimen name="nav_icon_size">28dp</dimen>
+    <dimen name="system_nav_bar_height">20dp</dimen>
+    <dimen name="system_nav_handle_width">94dp</dimen>
+    <dimen name="system_nav_handle_height">3.5dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_small">8sp</dimen>
+    <dimen name="line_height_body">24sp</dimen>
+    <dimen name="line_height_caption">18sp</dimen>
+
+</resources>

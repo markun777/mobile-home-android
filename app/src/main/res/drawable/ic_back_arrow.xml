@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: icon/箭头/左 (component 34:4289), exported SVG, viewport 48×48 → 24dp -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Main chevron outline (stroke) -->
+    <path
+        android:pathData="M32,6L17.181,22.671C16.508,23.429 16.508,24.571 17.181,25.329L32,42"
+        android:strokeColor="#E0000000"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+    <!-- Filled chevron body -->
+    <path
+        android:pathData="M33.495,40.671C34.229,41.497 34.155,42.761 33.329,43.495C32.504,44.229 31.239,44.155 30.505,43.329L15.687,26.657C14.339,25.142 14.339,22.858 15.687,21.343L30.505,4.671C31.239,3.845 32.504,3.771 33.329,4.505C34.155,5.239 34.229,6.504 33.495,7.329L18.676,24L33.495,40.671Z"
+        android:fillColor="#E0000000" />
+</vector>

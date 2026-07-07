@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 移动端对话输入框 card: white, rounded 16dp, 0.5px border tertiary -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="16dp" />
+    <solid android:color="@color/surface_canvas" />
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/text_tertiary" />
+</shape>
